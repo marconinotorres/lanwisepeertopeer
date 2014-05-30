@@ -1,14 +1,11 @@
 package grafica;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
@@ -43,13 +40,14 @@ public class Pannello extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JFrame frame=new JFrame("LWP2P");
-				Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-				frame.setBounds((int) screenSize.getWidth() >> 2,
-						(int) screenSize.getHeight() >> 3,
-						(int) screenSize.getWidth() >> 2,
-						(int) screenSize.getHeight() >> 2 );
-				frame.setVisible(true);
+//				JFrame frame=new JFrame("LWP2P");
+//				Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//				frame.setBounds((int) screenSize.getWidth() >> 2,
+//						(int) screenSize.getHeight() >> 3,
+//						(int) screenSize.getWidth() >> 2,
+//						(int) screenSize.getHeight() >> 2 );
+//				frame.setVisible(true);		
+				FileChooser.main(null);
 			}
 		});
 		
