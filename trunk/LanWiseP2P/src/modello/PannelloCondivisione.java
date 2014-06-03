@@ -7,7 +7,10 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+
+import ordinamento.ProxyOrdinamento;
 
 public class PannelloCondivisione extends JFrame {
 
@@ -16,10 +19,13 @@ public class PannelloCondivisione extends JFrame {
 	public PannelloCondivisione() {
 		super();
 
+		JMenuBar menubar = new JMenuBar();
+		ProxyOrdinamento proxy = new ProxyOrdinamento(null);
 		JPanel panel = new JPanel();
-		Menu menu=new Menu();
-		JLabel lblWelcome = new JLabel(
-				"Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
+		
+		Menu ordinamentoMenu = new Menu(proxy);
+		menubar.add(ordinamentoMenu);
+		JLabel lblWelcome = new JLabel("Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
 		panel.add(lblWelcome);
 
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -30,8 +36,9 @@ public class PannelloCondivisione extends JFrame {
 		(int) screenSize.getHeight() >> 1);
 
 		add(panel);
-		setJMenuBar(menu);
+		setJMenuBar(menubar);
 		setTitle("LWP2P");
+		setDefaultCloseOperation(PannelloCondivisione.EXIT_ON_CLOSE);
 		setVisible(true);
 		// setLayout(new GridLayout(3,1));
 		// JLabel lblWelcome=new
