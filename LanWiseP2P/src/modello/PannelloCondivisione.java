@@ -1,7 +1,8 @@
 package modello;
 
-import java.awt.Dimension;
+import grafica.Menu;
 
+import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ public class PannelloCondivisione extends JFrame {
 		super();
 
 		JPanel panel = new JPanel();
-
+		Menu menu=new Menu();
 		JLabel lblWelcome = new JLabel(
 				"Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
 		panel.add(lblWelcome);
@@ -29,6 +30,7 @@ public class PannelloCondivisione extends JFrame {
 		(int) screenSize.getHeight() >> 1);
 
 		add(panel);
+		setJMenuBar(menu);
 		setTitle("LWP2P");
 		setVisible(true);
 		// setLayout(new GridLayout(3,1));
