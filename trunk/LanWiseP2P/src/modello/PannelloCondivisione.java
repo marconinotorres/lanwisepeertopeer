@@ -25,8 +25,8 @@ public class PannelloCondivisione extends JFrame {
 
 		setBounds((int) screenSize.getWidth() >> 2,
 		(int) screenSize.getHeight() >> 3,
-		(int) screenSize.getWidth() >> 2,
-		(int) screenSize.getHeight() >> 2);
+		(int) screenSize.getWidth() >> 1,
+		(int) screenSize.getHeight() >> 1);
 
 		add(panel);
 		setTitle("LWP2P");

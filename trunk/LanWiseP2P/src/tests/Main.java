@@ -2,16 +2,24 @@ package tests;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import grafica.Pannello;
+
 import javax.swing.JFrame;
+
+import modello.PannelloAccesso;
 
 
 
 public class Main {
+	
+	public static JFrame frame;
+	
+	public static JFrame getFrame() {
+		return frame;
+	}
 	public static void main(String[] args) {
 		
-		JFrame frame=new JFrame("LWP2P");
-		Pannello p=new Pannello();
+		Main.frame=new JFrame("LWP2P");
+		PannelloAccesso p=new PannelloAccesso();
 		frame.getContentPane().add(p);
 	
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
