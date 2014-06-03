@@ -5,21 +5,35 @@ import grafica.MenuOrdinamento;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
+import multimediaList.IMultimediaSettings;
+import multimediaList.MultimediaContents;
+import multimediaList.MultimediaList;
+import multimediaList.MultimediaListener;
+import multimediaList.MultimediaPanel;
+import multimediaList.MultimediaSetting;
+import multimediaList.Placer;
 import ordinamento.ProxyOrdinamento;
 
-public class PannelloCondivisione extends JFrame {
+public class PannelloCondivisione extends JFrame implements Observer{
 
 	private static final long serialVersionUID = 0;
-
-	public PannelloCondivisione() {
+	
+	private ProxyOrdinamento proxy;
+	private MultimediaList list = new MultimediaList();
+		
+	public PannelloCondivisione(final ProxyOrdinamento proxyOrdinamento) {
+		
 		super();
-
+		this.proxy = proxyOrdinamento;
+		proxy.addObserver(this);
 		JMenuBar menubar = new JMenuBar();
 		ProxyOrdinamento proxy = new ProxyOrdinamento(null);
 		JPanel panel = new JPanel();
@@ -44,5 +58,37 @@ public class PannelloCondivisione extends JFrame {
 		setTitle("LWP2P");
 		setDefaultCloseOperation(PannelloCondivisione.EXIT_ON_CLOSE);
 		setVisible(true);
+		
+		
+		MultimediaContents contents = new MultimediaContents();
+		contents.add(new FileHandler("prova1", 100, "Giuseppe Restivo"));
+		contents.add(new FileHandler("prova2", 200, "Marco Cortesi"));
+		contents.add(new FileHandler("prova3", 50, "Nicola Blago"));
+		contents.add(new FileHandler("prova4", 50, "Federico Bacci"));
+		contents.add(new FileHandler("prova5", 100, "Stefano Azzolina"));
+		list.setList(contents);
+		
+		
+		MultimediaPanel panel2 = new MultimediaPanel();
+		list.setPanel(panel2);
+		panel2.setList(list);
+		
+		MultimediaListener listener = new MultimediaListener(list);
+		panel.addKeyListener(listener);
+		
+		IMultimediaSettings setting = new MultimediaSetting();
+		list.setSetting(setting);
+		Placer placer = new Placer();
+		list.setPlacer(placer);
+		listener.setPlacer(placer);
+		add(panel2);
+		addKeyListener(listener);
+	}
+	
+	@Override
+	public void update(Observable o, Object arg) {
+		
+		
+		
 	}
 }
