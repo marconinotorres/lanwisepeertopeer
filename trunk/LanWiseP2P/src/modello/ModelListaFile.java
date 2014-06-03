@@ -1,4 +1,4 @@
-package ordinamento;
+package modello;
 
 /**
  * Un generico file presente nella Lista
