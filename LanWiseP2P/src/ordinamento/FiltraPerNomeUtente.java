@@ -3,6 +3,8 @@ package ordinamento;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import modello.ModelFile;
+
 /**
  * Organizza la lista di File in ordine alfabetico per nomeUtente, usando il Comparator sviluppato nella classe 
  * @author giusepperestivo
@@ -11,7 +13,7 @@ import java.util.Collections;
 public class FiltraPerNomeUtente implements IFiltro{
 
 	@Override
-	public ArrayList<ModelListaFile> filtraListaFile(ArrayList<ModelListaFile> filePresenti) {
+	public ArrayList<ModelFile> filtraListaFile(ArrayList<ModelFile> filePresenti) {
 		Collections.sort(filePresenti, new ComparatoreAlfabeticoNomeUtente());
 		return filePresenti;
 	}
