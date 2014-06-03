@@ -1,6 +1,6 @@
 package modello;
 
-import grafica.Menu;
+import grafica.MenuOrdinamento;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -23,7 +23,7 @@ public class PannelloCondivisione extends JFrame {
 		ProxyOrdinamento proxy = new ProxyOrdinamento(null);
 		JPanel panel = new JPanel();
 		
-		Menu ordinamentoMenu = new Menu(proxy);
+		MenuOrdinamento ordinamentoMenu = new MenuOrdinamento(proxy);
 		menubar.add(ordinamentoMenu);
 		JLabel lblWelcome = new JLabel("Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
 		panel.add(lblWelcome);
