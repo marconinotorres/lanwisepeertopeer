@@ -2,7 +2,7 @@ package ordinamento;
 
 import java.util.ArrayList;
 
-import modello.ModelFile;
+import modello.FileHandler;
 
 /**
  * Un generico filtro
@@ -15,5 +15,5 @@ public interface IFiltro {
 	/**
 	 * @return un'arrayList di File ordinati secondo il criterio scelto
 	 */
-	public abstract ArrayList<ModelFile> filtraListaFile(ArrayList<ModelFile> filePresenti);
+	public abstract ArrayList<FileHandler> filtraListaFile(ArrayList<FileHandler> filePresenti);
 }

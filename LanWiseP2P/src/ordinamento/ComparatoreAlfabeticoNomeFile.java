@@ -2,7 +2,7 @@ package ordinamento;
 
 import java.util.Comparator;
 
-import modello.ModelFile;
+import modello.FileHandler;
 
 
 /**
@@ -11,12 +11,12 @@ import modello.ModelFile;
  * @author Giuseppe Restivo
  *
  */
-public class ComparatoreAlfabeticoNomeFile implements Comparator<ModelFile> {
+public class ComparatoreAlfabeticoNomeFile implements Comparator<FileHandler> {
 
 	
 	
 	@Override
-	public int compare(ModelFile file1, ModelFile file2) {
+	public int compare(FileHandler file1, FileHandler file2) {
 		
 		return file1.getNomeFile().compareTo(file2.getNomeFile());
 	}

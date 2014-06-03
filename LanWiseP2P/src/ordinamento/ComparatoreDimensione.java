@@ -2,7 +2,7 @@ package ordinamento;
 
 import java.util.Comparator;
 
-import modello.ModelFile;
+import modello.FileHandler;
 
 /**
  * Comparatore per dimensione del file
@@ -10,12 +10,12 @@ import modello.ModelFile;
  * @author Giuseppe Restivo
  *
  */
-public class ComparatoreDimensione implements Comparator<ModelFile> {
+public class ComparatoreDimensione implements Comparator<FileHandler> {
 
 	
 	
 	@Override
-	public int compare(ModelFile file1, ModelFile file2) {
+	public int compare(FileHandler file1, FileHandler file2) {
 		
 		double size1 = file1.getDimensioneFile();
 		double size2 = file2.getDimensioneFile();
