@@ -16,12 +16,16 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
+import ordinamento.ProxyOrdinamento;
 import tests.Main;
 
 
 public class PannelloAccesso extends JPanel {
 	private static final long serialVersionUID = 0;
 		
+	private ProxyOrdinamento proxy = new ProxyOrdinamento(null);
+	
+	
 	public PannelloAccesso(){
 		
 		final ArrayList<JRadioButton> utenti=new ArrayList<>();
@@ -52,7 +56,7 @@ public class PannelloAccesso extends JPanel {
 				
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					PannelloCondivisione pannelloCond=new PannelloCondivisione();
+					PannelloCondivisione pannelloCond=new PannelloCondivisione(proxy);
 					Main.getFrame().setVisible(false);
 				}
 			});
