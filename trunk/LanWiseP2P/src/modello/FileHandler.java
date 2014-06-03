@@ -5,14 +5,14 @@ package modello;
  * @author Giuseppe Restivo
  *
  */
-public class ModelFile {
+public class FileHandler {
 
 	
 	private String nomeFile;
 	private double dimensioneFile;
 	private String nomeUtente;
 	
-	public ModelFile(String nomeFile, double dimensioneFile, String nomeUtente) {
+	public FileHandler(String nomeFile, double dimensioneFile, String nomeUtente) {
 		super();
 		this.nomeFile = nomeFile;
 		this.dimensioneFile = dimensioneFile;

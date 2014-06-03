@@ -33,7 +33,7 @@ public class MenuOrdinamento extends JMenu{
     
     
 	public MenuOrdinamento(final ProxyOrdinamento proxyOrdinamento) {
-		super("Ordina Per:");
+		super("Ordinamento");
 		this.proxyOrdinamento = proxyOrdinamento;
   
   		add(nameFi);

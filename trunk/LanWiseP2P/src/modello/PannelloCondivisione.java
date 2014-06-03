@@ -1,5 +1,6 @@
 package modello;
 
+import grafica.MenuCaricamento;
 import grafica.MenuOrdinamento;
 
 import java.awt.Dimension;
@@ -24,7 +25,10 @@ public class PannelloCondivisione extends JFrame {
 		JPanel panel = new JPanel();
 		
 		MenuOrdinamento ordinamentoMenu = new MenuOrdinamento(proxy);
+		MenuCaricamento caricamentoMenu = new MenuCaricamento();
+		
 		menubar.add(ordinamentoMenu);
+		menubar.add(caricamentoMenu);
 		JLabel lblWelcome = new JLabel("Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
 		panel.add(lblWelcome);
 
@@ -40,18 +44,5 @@ public class PannelloCondivisione extends JFrame {
 		setTitle("LWP2P");
 		setDefaultCloseOperation(PannelloCondivisione.EXIT_ON_CLOSE);
 		setVisible(true);
-		// setLayout(new GridLayout(3,1));
-		// JLabel lblWelcome=new
-		// JLabel("Benvenuto in LanWiseP2P: condividi qui il tuo codice per l'esame di FDI2!");
-		// setSize(dimen);
-		// // Dimension screenSize =
-		// Toolkit.getDefaultToolkit().getScreenSize();
-		// // setBounds((int) screenSize.getWidth() >> 2,
-		// // (int) screenSize.getHeight() >> 3,
-		// // (int) screenSize.getWidth() >> 2,
-		// // (int) screenSize.getHeight() >> 2 );
-		// //
-		// add(lblWelcome);
-		// setVisible(true);
 	}
 }

@@ -3,7 +3,7 @@ package ordinamento;
 import java.util.ArrayList;
 import java.util.Observable;
 
-import modello.ModelFile;
+import modello.FileHandler;
 
 /**
  * Proxy, cambia a run-time l'istanza delle varie tipologie di filtro
@@ -25,7 +25,7 @@ public class ProxyOrdinamento extends Observable implements IFiltro{
 	}
 
 	@Override
-	public ArrayList<ModelFile> filtraListaFile(ArrayList<ModelFile> filePresenti) {
+	public ArrayList<FileHandler> filtraListaFile(ArrayList<FileHandler> filePresenti) {
 		return filtro.filtraListaFile(filePresenti);
 	}
 	
