@@ -1,17 +1,12 @@
 package modello;
 
-import grafica.FileChooser;
-
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
@@ -56,7 +51,7 @@ public class PannelloAccesso extends JPanel {
 				
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					PannelloCondivisione pannelloCond=new PannelloCondivisione(proxy);
+					FrameCondivisione frameCond=new FrameCondivisione(proxy);
 					Main.getFrame().setVisible(false);
 				}
 			});
