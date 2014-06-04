@@ -39,10 +39,10 @@ public class MultimediaListController extends KeyAdapter{
 		super.keyPressed(e);
 		
 		if(e.getKeyCode()==KeyEvent.VK_UP){
-			multimediaList.up();
+			multimediaList.down();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_DOWN){
-			multimediaList.down();
+			multimediaList.up();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_A){
 			((ProxyPlacer)multimediaList.getPlacer()).setPlacer(vPlacer);
