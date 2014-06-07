@@ -5,6 +5,9 @@ import grafica.MenuOrdinamento;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -23,7 +26,7 @@ import multimedia.settings.MultimediaSettings;
 import multimedia.MultimediaListController;
 
 /**
- * Andrebbe risistemata un p˜ meglio
+ * Andrebbe risistemata un pï¿½ meglio
  * @author Giuseppe Restivo
  *
  */
@@ -32,8 +35,7 @@ public class FrameCondivisione extends JFrame implements Observer{
 	
 	private static final long serialVersionUID = 1L;
 
-	private ProxyOrdinamento proxy;
-	
+	private ProxyOrdinamento proxy;	
 	private MultimediaList multimediaList;
 	private MultimediaPanel panel2 = new MultimediaPanel();
 	
@@ -69,12 +71,12 @@ public class FrameCondivisione extends JFrame implements Observer{
 		
 		ArrayList<FileHandler> multimedia = new ArrayList<FileHandler>();
 		
-		multimedia.add(new FileHandler("prova1", 100, "Giuseppe Restivo"));
-		multimedia.add(new FileHandler("prova2", 200, "Marco Cortesi"));
-		multimedia.add(new FileHandler("prova3", 50, "Nicola Blago"));
-		multimedia.add(new FileHandler("prova4", 50, "Federico Bacci"));
-		multimedia.add(new FileHandler("prova5", 100, "Stefano Azzolina"));
-		multimedia.add(new FileHandler("prova7", 100, "Stefano Azzolina"));
+		multimedia.add(new FileHandler("prova1", "Giuseppe Restivo"));
+		multimedia.add(new FileHandler("prova2", "Marco Cortesi"));
+		multimedia.add(new FileHandler("prova3", "Nicola Blago"));
+		multimedia.add(new FileHandler("prova4", "Federico Bacci"));
+		multimedia.add(new FileHandler("prova5", "Stefano Azzolina"));
+		multimedia.add(new FileHandler("prova7", "Stefano Azzolina"));
 		
 		ProxyPlacer proxyPlacer = new ProxyPlacer(MultimediaListController.getController().getvPlacer());
 		MultimediaSettings setting = new MultimediaSettings();

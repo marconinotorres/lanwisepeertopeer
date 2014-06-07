@@ -10,14 +10,12 @@ public class FileHandler {
 
 	
 	private String nomeFile;
-	private double dimensioneFile;
-	private String nomeUtente;
+	private String ip;
 	
-	public FileHandler(String nomeFile, double dimensioneFile, String nomeUtente) {
+	public FileHandler(String nomeFile, String ip) {
 		super();
 		this.nomeFile = nomeFile;
-		this.dimensioneFile = dimensioneFile;
-		this.nomeUtente = nomeUtente;
+		this.ip = ip;
 	}
 
 	public String getNomeFile() {
@@ -28,25 +26,18 @@ public class FileHandler {
 		this.nomeFile = nomeFile;
 	}
 
-	public double getDimensioneFile() {
-		return dimensioneFile;
+
+	public String getIp() {
+		return ip;
 	}
 
-	public void setDimensioneFile(double dimensioneFile) {
-		this.dimensioneFile = dimensioneFile;
-	}
-
-	public String getNomeUtente() {
-		return nomeUtente;
-	}
-
-	public void setNomeUtente(String nomeUtente) {
-		this.nomeUtente = nomeUtente;
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 	
 	@Override
 	public String toString() {
-		return nomeFile+"  -  "+dimensioneFile+"  -  "+nomeUtente;
+		return nomeFile+" - "+ip;
 	}
 	
 }

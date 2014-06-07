@@ -43,8 +43,7 @@ public class MultimediaContents implements IMultimediaContents {
 	@Override
 	public String toString(int index) {
 		
-		return contents.get(index).getNomeFile()+"   -   "+contents.get(index).getDimensioneFile()+"   -   "+
-				contents.get(index).getNomeUtente();
+		return contents.get(index).getNomeFile()+" - "+contents.get(index).getIp();
 	}
 	
 	/*
