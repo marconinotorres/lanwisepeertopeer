@@ -15,6 +15,6 @@ public class ComparatoreAlfabeticoNomeUtente implements Comparator<FileHandler>{
 	@Override
 	public int compare(FileHandler file1, FileHandler file2) {
 		
-		return file1.getNomeUtente().compareTo(file2.getNomeUtente());
+		return file1.getIp().compareTo(file2.getIp());
 	}
 }

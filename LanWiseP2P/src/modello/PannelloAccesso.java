@@ -12,6 +12,7 @@ import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
 import ordinamento.ProxyOrdinamento;
+import reti.Utente;
 import tests.Main;
 
 
@@ -34,7 +35,6 @@ public class PannelloAccesso extends JPanel {
 		TitledBorder border =new TitledBorder("Lista_Utenti");
 		border.setTitleColor(Color.blue);
 		setBorder(border);
-		System.err.println("ciao");
 		ButtonGroup gruppo=new ButtonGroup();
 		
 		for (int i = 0; i < 5; i++) {
@@ -52,7 +52,8 @@ public class PannelloAccesso extends JPanel {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					FrameCondivisione frameCond=new FrameCondivisione(proxy);
-					Main.getFrame().setVisible(false);
+					Main.getFrame().dispose();
+					Utente utente = Utente.getInstance();
 				}
 			});
 		}
