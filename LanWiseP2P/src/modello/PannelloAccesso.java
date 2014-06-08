@@ -12,6 +12,7 @@ import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
 import ordinamento.ProxyOrdinamento;
+import reti.PeerAsServer;
 import reti.Utente;
 import tests.Main;
 
@@ -54,6 +55,8 @@ public class PannelloAccesso extends JPanel {
 					FrameCondivisione frameCond=new FrameCondivisione(proxy);
 					Main.getFrame().dispose();
 					Utente utente = Utente.getInstance();
+					PeerAsServer pas = new PeerAsServer();
+					pas.start();
 				}
 			});
 		}

@@ -1,4 +1,4 @@
-elo.pl
-live-rcv
-tradotto.txt
-cell-rcv
+/home/rant/Scrivania/testD/elo.pl
+/home/rant/Scrivania/testD/live-rcv
+/home/rant/Scrivania/testD/tradotto.txt
+/home/rant/Scrivania/testD/cell-rcv

@@ -10,7 +10,7 @@ public class ListaCondivisione extends Observable {
 	public ListaCondivisione() {
 
 		multimedia.clear();
-		multimedia.add(new FileHandler("prova1", "Giuseppe Restivo"));
+		multimedia.add(new FileHandler("/home/rant/Scrivania/testD/cell-rcv", "127.0.0.1"));
 		multimedia.add(new FileHandler("prova2", "Marco Cortesi"));
 		multimedia.add(new FileHandler("prova3", "Nicola Blago"));
 		multimedia.add(new FileHandler("prova4", "Federico Bacci"));
