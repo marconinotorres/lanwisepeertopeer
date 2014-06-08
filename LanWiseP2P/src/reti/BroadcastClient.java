@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 
 import modello.FileHandler;
 import modello.FrameCondivisione;
+import modello.ListaCondivisione;
 
 public class BroadcastClient extends Thread {
 
@@ -54,7 +55,7 @@ public class BroadcastClient extends Thread {
 			out.close();
 			socket.leaveGroup(address);
 			socket.close();
-			
+						
 			try {
 				sleep(5000);
 			} catch (InterruptedException e) {

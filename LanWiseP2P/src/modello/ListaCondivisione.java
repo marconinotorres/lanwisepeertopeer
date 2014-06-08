@@ -1,5 +1,8 @@
 package modello;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -7,15 +10,33 @@ public class ListaCondivisione extends Observable {
 
 	ArrayList<FileHandler> multimedia = new ArrayList<FileHandler>();
 
-	public ListaCondivisione() {
+	private static ListaCondivisione instance;
 
-		multimedia.clear();
-		multimedia.add(new FileHandler("/home/rant/Scrivania/testD/cell-rcv", "127.0.0.1"));
-		multimedia.add(new FileHandler("prova2", "Marco Cortesi"));
-		multimedia.add(new FileHandler("prova3", "Nicola Blago"));
-		multimedia.add(new FileHandler("prova4", "Federico Bacci"));
-		multimedia.add(new FileHandler("prova5", "Stefano Azzolina"));
-		multimedia.add(new FileHandler("prova7", "Stefano Azzolina"));
+	private ListaCondivisione() {
+	}
+	
+	public static synchronized ListaCondivisione getInstance() {
+		if (instance == null) {
+			instance = new ListaCondivisione();
+		}
+		return instance;
+	}
+	
+
+	public void CreaLista() {
+		multimedia.clear();	
+
+		try {
+			BufferedReader in = new BufferedReader(new FileReader("OtherFilesList.txt"));
+			String line;
+			while ((line = in.readLine()) != null) {
+				multimedia.add(new FileHandler(line, in.readLine()));
+			} 
+			in.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		update();
 
 	}
