@@ -1,0 +1,8 @@
+/home/rant/Scrivania/testD/elo.pl
+192.168.0.155
+/home/rant/Scrivania/testD/live-rcv
+192.168.0.155
+/home/rant/Scrivania/testD/tradotto.txt
+192.168.0.155
+/home/rant/Scrivania/testD/cell-rcv
+192.168.0.155
