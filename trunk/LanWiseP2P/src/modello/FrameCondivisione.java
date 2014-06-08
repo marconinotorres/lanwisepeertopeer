@@ -68,15 +68,8 @@ public class FrameCondivisione extends JFrame implements Observer{
 		setDefaultCloseOperation(FrameCondivisione.EXIT_ON_CLOSE);
 		setVisible(true);
 		
-		
-		ArrayList<FileHandler> multimedia = new ArrayList<FileHandler>();
-		
-		multimedia.add(new FileHandler("prova1", "Giuseppe Restivo"));
-		multimedia.add(new FileHandler("prova2", "Marco Cortesi"));
-		multimedia.add(new FileHandler("prova3", "Nicola Blago"));
-		multimedia.add(new FileHandler("prova4", "Federico Bacci"));
-		multimedia.add(new FileHandler("prova5", "Stefano Azzolina"));
-		multimedia.add(new FileHandler("prova7", "Stefano Azzolina"));
+		ListaCondivisione lista = new ListaCondivisione();
+		ArrayList<FileHandler> multimedia = lista.getMultimedia();
 		
 		ProxyPlacer proxyPlacer = new ProxyPlacer(MultimediaListController.getController().getvPlacer());
 		MultimediaSettings setting = new MultimediaSettings();
