@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class Client extends Thread{
 
-	public final static int SOCKET_PORT = 13699; //numero a piacere; lo stesso del Server
+	public final static int SOCKET_PORT = 13599; //numero a piacere; lo stesso del Server
 	public static String IP_SERVER; 
 	public static String FILE_TO_RECEIVED;
 

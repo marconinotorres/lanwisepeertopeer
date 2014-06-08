@@ -47,7 +47,7 @@ public class BroadcastClient extends Thread {
 				if (received.equalsIgnoreCase("")) {break;}
 				out.println(received);
 				out.println(ip_rec);
-				System.out.println("sto ricevendo "+received+" da "+ip_rec);
+				//System.out.println("sto ricevendo "+received+" da "+ip_rec);
 			}
 
 			out.flush();

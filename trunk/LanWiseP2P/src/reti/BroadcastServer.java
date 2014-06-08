@@ -111,7 +111,7 @@ public class BroadcastServer extends Thread {
 			} else {
 				if (!fileEntry.getName().startsWith(".")) {
 //					System.out.println(fileEntry.getName());
-					out.println(fileEntry.getName());
+					out.println(fileEntry.getAbsolutePath());
 					out.flush();
 				}
 			}
