@@ -36,4 +36,5 @@ public class ProxyOrdinamento extends Observable implements IFiltro{
 		setChanged();
 		notifyObservers();
 	}
+	
 }

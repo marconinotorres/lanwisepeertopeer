@@ -10,7 +10,7 @@ import java.net.Socket;
 
 public class Server extends Thread{
 
-	public final static int SOCKET_PORT = 13599; //numero a piacere; lo stesso del Client
+	public final static int SOCKET_PORT = 13499; //numero a piacere; lo stesso del Client
 	public static String FILE_TO_SEND;
 
 	public void run(){ //probabilmente c'?? un mdoo migliore di farlo;

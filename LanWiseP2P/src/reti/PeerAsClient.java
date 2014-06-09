@@ -5,7 +5,7 @@ import java.net.Socket;
 
 public class PeerAsClient extends Thread {
 	
-	public static int SOCKET_PORT_REQUEST = 13597;
+	public static int SOCKET_PORT_REQUEST = 13497;
 	public String IP_SERVER;
 	public String FILE_TO_REQUEST;
 	public String FILE_TO_RECEIVED;

@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class PeerAsServer extends Thread {
 	
-	public final static int SOCKET_PORT_REQUEST = 13597;
+	public final static int SOCKET_PORT_REQUEST = 13497;
 	
 	public void run(){ //probabilmente c'?? un mdoo migliore di farlo;
 		try {
