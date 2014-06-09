@@ -4,9 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Observable;
 
-public class ListaCondivisione extends Observable {
+import javax.swing.SwingWorker;
+
+public class ListaCondivisione {
 
 	ArrayList<FileHandler> multimedia = new ArrayList<FileHandler>();
 
@@ -23,7 +24,7 @@ public class ListaCondivisione extends Observable {
 	}
 	
 
-	public void CreaLista() {
+	public ArrayList<FileHandler> getMultimedia() {
 		multimedia.clear();	
 
 		try {
@@ -36,21 +37,13 @@ public class ListaCondivisione extends Observable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		update();
-
-	}
-
-	public ArrayList<FileHandler> getMultimedia() {
+		
 		return multimedia;
 	}
-
-	public void update() {
-		setChanged();
-		notifyObservers();
-	}
-
-
-
+	
+	
 
 }
+
+
+
