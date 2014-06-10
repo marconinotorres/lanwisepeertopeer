@@ -1,5 +1,7 @@
 package reti;
 
+import grafica.EccezioneDialog;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,6 +9,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import modello.GestioneEccezioni;
 
 public class Server extends Thread{
 
@@ -46,9 +50,11 @@ public class Server extends Thread{
 		os.flush();
 		System.out.println("(S) Done.");
 
+		EccezioneDialog dialog = new  EccezioneDialog(new GestioneEccezioni("Download Completato"));
 		bis.close();
 		os.close();
 		sock.close();
 		servsock.close();
+		dialog.setVisible(true);
 	}
 }
