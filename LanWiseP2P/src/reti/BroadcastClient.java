@@ -1,6 +1,8 @@
 package reti;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,6 +11,7 @@ import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 import modello.FileHandler;
 import modello.FrameCondivisione;
@@ -27,7 +30,7 @@ public class BroadcastClient extends Thread {
 	public static void main(String[] args) throws IOException {
 		while(true) {
 
-			Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
+//			Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
 
 			MulticastSocket socket = new MulticastSocket(4446);
 			InetAddress address = InetAddress.getByName("230.0.0.1");
@@ -46,8 +49,21 @@ public class BroadcastClient extends Thread {
 				String received = new String(packet.getData(), 0, packet.getLength());
 				String ip_rec = new String(packet.getAddress().getHostAddress());
 				if (received.equalsIgnoreCase("")) {break;}
-				out.println(received);
-				out.println(ip_rec);
+
+				Scanner scanner=new Scanner(new BufferedReader(new FileReader("OtherFilesList.txt")));
+				boolean found=false;
+				while(scanner.hasNextLine()){
+					String nextLine=scanner.nextLine();
+					if(received.equals(nextLine)){
+						found=true;
+						break;
+					}
+				}
+				if(!found){
+						out.println(received);
+						out.println(ip_rec);
+				}
+				scanner.close();
 				//System.out.println("sto ricevendo "+received+" da "+ip_rec);
 			}
 
