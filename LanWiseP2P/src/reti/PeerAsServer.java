@@ -19,6 +19,7 @@ public class PeerAsServer extends Thread {
 	
 	public void accettaConnessione() throws Exception{
 		while(true){
+			
 			String nomeFile;			
 			ServerSocket servsock = null;
 			Socket sock = null;
@@ -30,6 +31,7 @@ public class PeerAsServer extends Thread {
 			System.out.println("(PS) Accepting connection...");
 			
 			BufferedReader socketReader = null;
+			
 			socketReader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 			nomeFile = socketReader.readLine();
 			System.out.println(nomeFile);
