@@ -18,6 +18,7 @@ public class Main {
 	public static JFrame getFrame() {
 		return frame;
 	}
+	
 	public static void main(String[] args) {
 		
 		

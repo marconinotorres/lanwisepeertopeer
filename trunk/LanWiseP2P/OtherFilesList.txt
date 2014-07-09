@@ -2,3 +2,5 @@
 10.65.2.15
 /Users/giusepperestivo/Desktop/Condividere/Restivo.rtf
 10.65.2.15
+/Users/giusepperestivo/Desktop/Condividere/Guidi-GoFDesignPatternsInJava.pdf
+192.168.1.2

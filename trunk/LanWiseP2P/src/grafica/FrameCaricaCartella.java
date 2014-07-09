@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import reti.BroadcastServer;
-import reti.Utente;
+import reti.CartelleUtente;
 
 public class FrameCaricaCartella extends JFrame{
 
@@ -53,7 +53,7 @@ public class FrameCaricaCartella extends JFrame{
 				chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				chooser.showOpenDialog(chooser);
 				
-				Utente utente = Utente.getInstance();
+				CartelleUtente utente = CartelleUtente.getInstance();
 				utente.setUpFolder(chooser.getSelectedFile().getAbsolutePath());
 				System.out.println(utente.getUpFolder());
 				try {

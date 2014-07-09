@@ -15,7 +15,7 @@ import javax.swing.border.TitledBorder;
 import modello.IUtenti;
 import modello.readUtenti.TestReadUtenti;
 import reti.PeerAsServer;
-import reti.Utente;
+import reti.CartelleUtente;
 import tests.Main;
 
 
@@ -53,7 +53,7 @@ public class PannelloAccesso extends JPanel {
 					new FrameCaricaCartella();
 					Main.getFrame().dispose();
 					
-					Utente utente = Utente.getInstance();
+					CartelleUtente utente = CartelleUtente.getInstance();
 					PeerAsServer pas = new PeerAsServer();
 					pas.start();
 

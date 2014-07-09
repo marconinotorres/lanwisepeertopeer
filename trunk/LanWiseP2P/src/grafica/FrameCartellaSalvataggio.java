@@ -18,7 +18,7 @@ import ordinamento.ProxyOrdinamento;
 import modello.FrameCondivisione;
 import reti.BroadcastClient;
 import reti.BroadcastServer;
-import reti.Utente;
+import reti.CartelleUtente;
 
 public class FrameCartellaSalvataggio extends JFrame{
 
@@ -56,7 +56,7 @@ public class FrameCartellaSalvataggio extends JFrame{
 				chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				chooser.showOpenDialog(chooser);
 				
-				Utente utente = Utente.getInstance();
+				CartelleUtente utente = CartelleUtente.getInstance();
 				utente.setDownFolder(chooser.getSelectedFile().getAbsolutePath());
 				BroadcastClient c = new BroadcastClient();
 				c.start();

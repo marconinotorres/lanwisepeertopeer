@@ -1,2 +1,3 @@
+/Users/giusepperestivo/Desktop/Condividere/Guidi-GoFDesignPatternsInJava.pdf
 /Users/giusepperestivo/Desktop/Condividere/Peppe.rtf
 /Users/giusepperestivo/Desktop/Condividere/Restivo.rtf
