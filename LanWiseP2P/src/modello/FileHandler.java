@@ -10,6 +10,8 @@ public class FileHandler {
 
 	
 	private String nomeFile;
+	private int dimension;
+	private Utente utente;
 	private String ip;
 	
 	public FileHandler(String nomeFile, String ip) {
@@ -17,6 +19,42 @@ public class FileHandler {
 		this.nomeFile = nomeFile;
 		this.ip = ip;
 	}
+	
+	
+
+	public FileHandler(String nomeFile, int dimension, Utente utente, String ip) {
+		super();
+		this.nomeFile = nomeFile;
+		this.dimension = dimension;
+		this.utente = utente;
+		this.ip = ip;
+	}
+
+
+	
+	public int getDimension() {
+		return dimension;
+	}
+
+
+
+	public void setDimension(int dimension) {
+		this.dimension = dimension;
+	}
+
+
+
+	public Utente getUtente() {
+		return utente;
+	}
+
+
+
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
+
+
 
 	public String getNomeFile() {
 		return nomeFile;

@@ -1,16 +1,16 @@
 package reti;
 
-public class Utente {
+public class CartelleUtente {
 	
 	// SINGLETON!
-	private static Utente instance;
-	private Utente() {
+	private static CartelleUtente instance;
+	private CartelleUtente() {
 		
 	}
 	
-	public static synchronized Utente getInstance() {
+	public static synchronized CartelleUtente getInstance() {
 		if (instance == null) {
-			instance = new Utente();
+			instance = new CartelleUtente();
 		}
 		return instance;
 	}

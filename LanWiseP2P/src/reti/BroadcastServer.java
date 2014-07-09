@@ -27,7 +27,6 @@ public class BroadcastServer extends Thread {
 		socket = new DatagramSocket(4445);
 		socket.setSendBufferSize(65536);
 
-
 	}
 
 
@@ -110,7 +109,7 @@ public class BroadcastServer extends Thread {
 				listFilesForFolder(fileEntry);
 			} else {
 				if (!fileEntry.getName().startsWith(".")) {
-//					System.out.println(fileEntry.getName());
+					
 					out.println(fileEntry.getAbsolutePath());
 					out.flush();
 				}

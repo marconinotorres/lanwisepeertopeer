@@ -7,7 +7,7 @@ import modello.FileHandler;
 import multimedia.IMultimediaContents;
 import reti.PeerAsClient;
 import reti.PeerAsServer;
-import reti.Utente;
+import reti.CartelleUtente;
 
 /**
  * @author Giuseppe Restivo
@@ -15,7 +15,7 @@ import reti.Utente;
  */
 public class MultimediaContents implements IMultimediaContents {
 	
-	Utente utente = Utente.getInstance();
+	CartelleUtente utente = CartelleUtente.getInstance();
 
 	private ArrayList<FileHandler> contents=new ArrayList<FileHandler>();
 	

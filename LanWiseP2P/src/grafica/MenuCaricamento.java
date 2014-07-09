@@ -11,7 +11,7 @@ import javax.swing.JMenuItem;
 
 import reti.BroadcastClient;
 import reti.BroadcastServer;
-import reti.Utente;
+import reti.CartelleUtente;
 
 public class MenuCaricamento extends JMenu {
 
@@ -35,7 +35,7 @@ public class MenuCaricamento extends JMenu {
 				chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				chooser.showOpenDialog(chooser);
 
-				Utente utente = Utente.getInstance();
+				CartelleUtente utente = CartelleUtente.getInstance();
 				utente.setUpFolder(chooser.getSelectedFile().getAbsolutePath());
 				System.out.println(utente.getUpFolder());
 				try {
@@ -56,7 +56,7 @@ public class MenuCaricamento extends JMenu {
 				JFileChooser chooser=new JFileChooser();
 				chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				chooser.showOpenDialog(chooser);
-				Utente utente = Utente.getInstance();
+				CartelleUtente utente = CartelleUtente.getInstance();
 				utente.setDownFolder(chooser.getSelectedFile().getAbsolutePath());
 				BroadcastClient c = new BroadcastClient();
 				c.start();
