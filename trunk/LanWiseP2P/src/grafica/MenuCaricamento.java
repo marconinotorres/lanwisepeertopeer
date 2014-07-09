@@ -56,7 +56,6 @@ public class MenuCaricamento extends JMenu {
 				JFileChooser chooser=new JFileChooser();
 				chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				chooser.showOpenDialog(chooser);
-//				System.err.println(chooser.getSelectedFile().getName());
 				Utente utente = Utente.getInstance();
 				utente.setDownFolder(chooser.getSelectedFile().getAbsolutePath());
 				BroadcastClient c = new BroadcastClient();
