@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import ordinamento.ProxyOrdinamento;
-import modello.FrameCondivisione;
+import grafica.FrameCondivisione;
 import reti.BroadcastClient;
 import reti.BroadcastServer;
 import reti.CartelleUtente;
