@@ -1,69 +1,34 @@
 package modello;
 
-import java.util.ArrayList;
 
 /**
- * Generico Utente che si collega
+ * Generico Utente
  * 
  * @author giusepperestivo
  *
  */
-public class Utente implements IListaUtenti{
+public class Utente{
 
-	private static Utente utente = new Utente();
-	private Utente() {
-		// TODO Auto-generated constructor stub
+	private String nome, cognome;	
+	
+	public Utente(String nome, String cognome) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
 	}
 	
-	public static Utente getUtente() {
-		return utente;
+	public String getNome() {
+		return nome;
 	}
-	
-	private ArrayList<String> listaUtenti = new ArrayList<String>();
-	private String utenteSelezionato;
-	
-	public void addUtente(String utente){
-		listaUtenti.add(utente);
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	public void setUtenteSelezionato(String utenteSelezionato) {
-		this.utenteSelezionato = utenteSelezionato;
+	public String getCognome() {
+		return cognome;
 	}
-	
-	public String getUtenteSelezionato() {
-		return utenteSelezionato;
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
 	}
+
 	
-	//restituisce true se si sta tentando di accedere con un nomeUtente giˆ connesso
-	public boolean controlloAccessi(String nomeUtenteSelezionato){
-		
-		boolean verifica = false;
-		int count = 0;
-		for (int i = 0; i < listaUtenti.size(); i++) {
-			String utente = listaUtenti.get(i);
-			if(nomeUtenteSelezionato.equals(utente)){
-				count++;
-			}
-		}
-		if(count==1){
-			verifica = false;
-		}else
-			verifica = true;
-		return verifica;
-	}
-	
-	
-	@Override
-	public ArrayList<String> getListaUtenti() {
-		listaUtenti.add("Giuseppe Restivo");
-		listaUtenti.add("Nicola Blago");
-		listaUtenti.add("Federico Bacci");
-		listaUtenti.add("Stefano Azzolina");
-		listaUtenti.add("Marco Cortesi");
-		return listaUtenti;
-	}
-	@Override
-	public String toString(int index) {
-		return getListaUtenti().get(index);
-	}
 }
