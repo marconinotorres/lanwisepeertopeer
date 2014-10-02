@@ -11,7 +11,6 @@ public abstract class UtenteReader {
 	public static UtenteReader getUtente() {
 		return utente;
 	}
-	
 	public static void setUtente(UtenteReader utente) {
 		UtenteReader.utente = utente;
 	}
