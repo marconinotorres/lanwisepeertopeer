@@ -19,7 +19,7 @@ public class TestReadUtenti implements IUtenti{
 	 * @see modello.IUtenti#getUtenti()
 	 */
 	@Override
-	public List<Utente> getUtenti() {
+	public void getUtenti() {
 		File file = new File("data/listaUtenti.txt");
 		
 		try {
@@ -40,7 +40,5 @@ public class TestReadUtenti implements IUtenti{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return null;
 	}
 }
