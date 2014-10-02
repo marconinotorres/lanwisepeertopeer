@@ -21,16 +21,15 @@ public class TestReadUtenti implements IUtenti{
 	@Override
 	public List<Utente> getUtenti() {
 		File file = new File("data/listaUtenti.txt");
-		List<Utente> utenti = new ArrayList<Utente>();
-		utenti.clear();
+		
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String line = reader.readLine(); 
 			while (line!=null) {
 				StringTokenizer token = new StringTokenizer(line);
 				String nome = token.nextToken();
-				String cognome = token.nextToken();
-				utenti.add(new Utente(nome, cognome));
+				String cognome = nome + token.nextToken();
+				Utente.getUtente().addUtente(cognome);
 				line = reader.readLine();
 			}
 			reader.close();
@@ -42,6 +41,6 @@ public class TestReadUtenti implements IUtenti{
 			e.printStackTrace();
 		}
 		
-		return utenti;
+		return null;
 	}
 }

@@ -4,3 +4,5 @@
 10.65.2.15
 /Users/giusepperestivo/Desktop/Condividere/Guidi-GoFDesignPatternsInJava.pdf
 192.168.1.2
+/Users/giusepperestivo/Desktop/Condividere/APPELLI2013_2014.pdf
+10.65.26.126
