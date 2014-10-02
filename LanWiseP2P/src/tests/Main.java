@@ -10,8 +10,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import modello.Utente;
-
-
+import modello.readUtenti.TestReadUtenti;
+import modello.readUtenti.UtenteReader;
+import modello.writeUtenti.TestWriteConnessione;
+import modello.writeUtenti.UtenteWriter;
 
 public class Main {
 	
@@ -40,14 +42,21 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		PannelloAccesso p=new PannelloAccesso(Utente.getUtente());
+		
+		UtenteReader.setUtente(new TestReadUtenti());
+		UtenteWriter.setUtente(new TestWriteConnessione());
+		
+		PannelloAccesso p=new PannelloAccesso();
+		
 		frame.getContentPane().add(p);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setBounds((int) screenSize.getWidth() >>3,
 				(int) screenSize.getHeight() >> 3,
 				(int) screenSize.getWidth() >> 3,
 				(int) screenSize.getHeight() >> 2 );
+		
 		frame.setVisible(true);
 		
 	}
