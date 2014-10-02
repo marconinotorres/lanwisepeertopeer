@@ -18,4 +18,13 @@ public abstract class UtenteWriter {
 	}
 	
 	public abstract void writeConnessione(String utenteCollegato,String carattere);
+	
+	private String utenteCollegato;
+	
+	public String getUtenteCollegato() {
+		return utenteCollegato;
+	}
+	public void setUtenteCollegato(String utenteCollegato2) {
+		this.utenteCollegato = utenteCollegato2;
+	}
 }
