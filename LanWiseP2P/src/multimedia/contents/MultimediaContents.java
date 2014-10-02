@@ -15,7 +15,7 @@ import reti.CartelleUtente;
  */
 public class MultimediaContents implements IMultimediaContents {
 	
-	CartelleUtente utente = CartelleUtente.getInstance();
+	private CartelleUtente utente = CartelleUtente.getInstance();
 
 	private ArrayList<FileHandler> contents=new ArrayList<FileHandler>();
 	

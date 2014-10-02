@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import modello.Utente;
+
 
 
 public class Main {
@@ -38,7 +40,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		PannelloAccesso p=new PannelloAccesso();
+		PannelloAccesso p=new PannelloAccesso(Utente.getUtente());
 		frame.getContentPane().add(p);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
