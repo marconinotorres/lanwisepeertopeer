@@ -3,6 +3,14 @@ package reti;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+/**
+ * Viene attivato quando si vuole in download un certo file e 
+ * 
+ * avvia il Client effettivo che riceve i byte e li salva.
+ * 
+ * @author giusepperestivo
+ *
+ */
 public class PeerAsClient extends Thread {
 	
 	public static int SOCKET_PORT_REQUEST = 13497;

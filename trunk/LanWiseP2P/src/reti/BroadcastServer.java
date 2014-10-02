@@ -14,6 +14,11 @@ import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * Invia in broadcast la lista dei propri file
+ * @author giusepperestivo
+ *
+ */
 public class BroadcastServer extends Thread {
 
 	protected DatagramSocket socket = null;
@@ -22,8 +27,8 @@ public class BroadcastServer extends Thread {
 	static File upFolder;
 
 	public BroadcastServer(File upFolder) throws IOException {
+		
 		this.upFolder = upFolder;
-
 		socket = new DatagramSocket(4445);
 		socket.setSendBufferSize(65536);
 

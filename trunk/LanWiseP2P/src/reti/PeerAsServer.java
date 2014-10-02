@@ -4,12 +4,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
 
+import modello.Utente;
+
+/**
+ * Resta in ascolto di una richiesta di download (ovvero il PeerAsServer di un altro utente) 
+ * 
+ * e attiva l'effettivo Server che trasferisce i byte.
+ * 
+ * @author giusepperestivo
+ *
+ */
 public class PeerAsServer extends Thread {
 	
 	public final static int SOCKET_PORT_REQUEST = 13497;
 	
-	public void run(){ //probabilmente c'?? un mdoo migliore di farlo;
+	public void run(){ //probabilmente c'e un modo migliore di farlo;
 		try {
 			accettaConnessione();
 		} catch (Exception e) {
@@ -17,7 +28,8 @@ public class PeerAsServer extends Thread {
 		}
 	}
 	
-	public void accettaConnessione() throws Exception{
+	private void accettaConnessione() throws Exception{
+		
 		while(true){
 			
 			String nomeFile;			
@@ -45,5 +57,5 @@ public class PeerAsServer extends Thread {
 			
 		}	
 	}
-
+	
 }

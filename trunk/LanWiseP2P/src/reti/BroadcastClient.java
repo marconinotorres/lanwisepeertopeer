@@ -13,10 +13,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import modello.FileHandler;
-import modello.FrameCondivisione;
-import modello.ListaCondivisione;
 
+/**
+ * Riceve la lista di tutti i file di tutti gli utenti
+ * @author giusepperestivo
+ *
+ */
 public class BroadcastClient extends Thread {
 
 	public void run() { // probabilmente c'?? un modo migliore di farlo;
@@ -28,6 +30,7 @@ public class BroadcastClient extends Thread {
 	}
 
 	public static void main(String[] args) throws IOException {
+		
 		while(true) {
 
 //			Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
