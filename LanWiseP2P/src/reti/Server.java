@@ -26,6 +26,7 @@ public class Server extends Thread{
 	}
 
 	public static void main (String [] args ) throws IOException {
+		
 		FileInputStream fis = null;
 		BufferedInputStream bis = null;
 		OutputStream os = null;
