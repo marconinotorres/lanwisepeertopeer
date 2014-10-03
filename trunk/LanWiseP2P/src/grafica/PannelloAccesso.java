@@ -48,12 +48,13 @@ public class PannelloAccesso extends JPanel {
 		
 		for (int i = 0; i < buttonUtenti.size(); i++) {
 			final String utenteCollegato = lista.get(i).getCognome();
-			
+			final String nomeUtColl = lista.get(i).getNome();
 			buttonUtenti.get(i).addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					UtenteWriter.getUtente().setUtenteCollegato(utenteCollegato);
+					
+					UtenteWriter.getUtente().setUtenteCollegato(new Utente(nomeUtColl, utenteCollegato));
 					UtenteWriter.getUtente().writeConnessione(utenteCollegato,"S");
 					
 					FrameCaricaCartella cartella = new FrameCaricaCartella();

@@ -14,8 +14,14 @@ import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import modello.FileHandler;
+import modello.Utente;
+import modello.readUtenti.UtenteReader;
+import modello.writeUtenti.UtenteWriter;
+
 /**
  * Invia in broadcast la lista dei propri file
+ * 
  * @author giusepperestivo
  *
  */
@@ -115,7 +121,10 @@ public class BroadcastServer extends Thread {
 			} else {
 				if (!fileEntry.getName().startsWith(".")) {
 					
-					out.println(fileEntry.getAbsolutePath());
+					String file = fileEntry.getName()+","+(int)fileEntry.length()+","+
+							UtenteWriter.getUtente().getUtenteCollegato().getCognome()+","+
+							UtenteWriter.getUtente().getUtenteCollegato().getNome();
+					out.println(file);
 					out.flush();
 				}
 			}

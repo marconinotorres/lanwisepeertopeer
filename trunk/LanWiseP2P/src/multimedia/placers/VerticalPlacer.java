@@ -10,7 +10,7 @@ import multimedia.IPlacer;
 
 public class VerticalPlacer implements IPlacer{
 
-	private static int X_FOCUS=200;
+	private static int X_FOCUS=50;
 	private static int Y_FOCUS=200;
 	
 	private static int DISTANZA_CONTENUTI_VERTICALE=40;

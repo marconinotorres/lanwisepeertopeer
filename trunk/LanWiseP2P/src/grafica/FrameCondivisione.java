@@ -72,7 +72,7 @@ public class FrameCondivisione extends JFrame implements Observer{
 		
 		contents = new MultimediaContents();
 
-		
+		contents.addContents("OtherFilesList.txt");
 		proxyPlacer = new ProxyPlacer(MultimediaListController.getController().getvPlacer());
 		setting = new MultimediaSettings();
 		
@@ -82,7 +82,7 @@ public class FrameCondivisione extends JFrame implements Observer{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				contents.getContentsList().clear();
-				contents.getContentsList();
+				contents.addContents("OtherFilesList.txt");
 				panel2.repaint();
 			}
 		});
