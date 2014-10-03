@@ -11,8 +11,8 @@ import java.util.StringTokenizer;
 import modello.Utente;
 
 /**
- * 0 -> non  connesso
- * 1 ->  connesso
+ * N -> non  connesso
+ * S ->  connesso
  * @author giusepperestivo
  *
  */
