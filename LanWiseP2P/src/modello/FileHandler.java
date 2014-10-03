@@ -14,6 +14,16 @@ public class FileHandler {
 	private Utente utente;
 	private String ip;
 	
+	
+	public FileHandler(String nomeFile, int dimension, Utente utente) {
+		super();
+		this.nomeFile = nomeFile;
+		this.dimension = dimension;
+		this.utente = utente;
+	}
+
+
+
 	public FileHandler(String nomeFile, String ip) {
 		super();
 		this.nomeFile = nomeFile;
@@ -75,7 +85,7 @@ public class FileHandler {
 	
 	@Override
 	public String toString() {
-		return nomeFile+" - "+ip;
+		return nomeFile+" - "+dimension+" - "+utente.getCognome()+" "+utente.getNome();
 	}
 	
 }

@@ -19,12 +19,12 @@ public abstract class UtenteWriter {
 	
 	public abstract void writeConnessione(String utenteCollegato,String carattere);
 	
-	private String utenteCollegato;
+	private Utente utenteCollegato;
 	
-	public String getUtenteCollegato() {
+	public Utente getUtenteCollegato() {
 		return utenteCollegato;
 	}
-	public void setUtenteCollegato(String utenteCollegato2) {
+	public void setUtenteCollegato(Utente utenteCollegato2) {
 		this.utenteCollegato = utenteCollegato2;
 	}
 }

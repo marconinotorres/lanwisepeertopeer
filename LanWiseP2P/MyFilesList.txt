@@ -1,4 +1,5 @@
-/Users/giusepperestivo/Desktop/Condividere/APPELLI2013_2014.pdf
-/Users/giusepperestivo/Desktop/Condividere/Guidi-GoFDesignPatternsInJava.pdf
-/Users/giusepperestivo/Desktop/Condividere/Peppe.rtf
-/Users/giusepperestivo/Desktop/Condividere/Restivo.rtf
+APPELLI2013_2014.pdf,218920,Restivo,Giuseppe
+EII3.webarchive,12382,Restivo,Giuseppe
+Guidi-GoFDesignPatternsInJava.pdf,1252043,Restivo,Giuseppe
+Peppe.rtf,334,Restivo,Giuseppe
+Restivo.rtf,337,Restivo,Giuseppe

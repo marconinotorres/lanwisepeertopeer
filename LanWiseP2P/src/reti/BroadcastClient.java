@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 /**
  * Riceve la lista di tutti i file di tutti gli utenti
+ * 
  * @author giusepperestivo
  *
  */
@@ -31,10 +32,11 @@ public class BroadcastClient extends Thread {
 
 	public static void main(String[] args) throws IOException {
 		
+		
+		Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
+		
 		while(true) {
-
-//			Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
-
+			
 			MulticastSocket socket = new MulticastSocket(4446);
 			InetAddress address = InetAddress.getByName("230.0.0.1");
 			socket.joinGroup(address);
@@ -50,7 +52,7 @@ public class BroadcastClient extends Thread {
 				socket.receive(packet);
 
 				String received = new String(packet.getData(), 0, packet.getLength());
-				String ip_rec = new String(packet.getAddress().getHostAddress());
+				
 				if (received.equalsIgnoreCase("")) {break;}
 
 				Scanner scanner=new Scanner(new BufferedReader(new FileReader("OtherFilesList.txt")));
@@ -64,10 +66,10 @@ public class BroadcastClient extends Thread {
 				}
 				if(!found){
 						out.println(received);
-						out.println(ip_rec);
+						
 				}
 				scanner.close();
-				//System.out.println("sto ricevendo "+received+" da "+ip_rec);
+				
 			}
 
 			out.flush();
