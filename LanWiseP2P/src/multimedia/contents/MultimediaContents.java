@@ -79,16 +79,6 @@ public class MultimediaContents implements IMultimediaContents {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see multimedia.IMultimediaContents#toString(int)
-	 */
-	@Override
-	public String toString(int index) {
-		return contents.get(index).toString();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
 	 * @see multimedia.IMultimediaContents#execute(int)
 	 */
 	@Override
