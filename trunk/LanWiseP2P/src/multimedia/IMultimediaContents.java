@@ -31,11 +31,5 @@ public interface IMultimediaContents {
 	 */
 	public void execute(int index);
 
-	/**
-	 * toString della lista dei contenuti
-	 * 
-	 * @param posizione
-	 *            i della lista
-	 */
-	public String toString(int index);
+	
 }
