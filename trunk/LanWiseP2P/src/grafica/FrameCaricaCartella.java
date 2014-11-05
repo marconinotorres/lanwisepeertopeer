@@ -15,8 +15,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import modello.writeUtenti.UtenteWriter;
-import reti.BroadcastServer;
-import reti.CartelleUtente;
+import rete.BroadcastServer;
+import rete.CartelleUtente;
 
 public class FrameCaricaCartella extends JFrame{
 

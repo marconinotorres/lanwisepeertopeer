@@ -16,9 +16,9 @@ import javax.swing.JPanel;
 
 import ordinamento.ProxyOrdinamento;
 import grafica.FrameCondivisione;
-import reti.BroadcastClient;
-import reti.BroadcastServer;
-import reti.CartelleUtente;
+import rete.BroadcastClient;
+import rete.BroadcastServer;
+import rete.CartelleUtente;
 
 public class FrameCartellaSalvataggio extends JFrame{
 

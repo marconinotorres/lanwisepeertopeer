@@ -9,9 +9,9 @@ import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import reti.BroadcastClient;
-import reti.BroadcastServer;
-import reti.CartelleUtente;
+import rete.BroadcastClient;
+import rete.BroadcastServer;
+import rete.CartelleUtente;
 
 public class MenuCaricamento extends JMenu {
 

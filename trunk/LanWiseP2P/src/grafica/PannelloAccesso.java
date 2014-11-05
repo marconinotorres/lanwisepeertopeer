@@ -16,8 +16,8 @@ import modello.Utente;
 import modello.letturaListaUtenti.TestReadUtenti;
 import modello.letturaListaUtenti.UtenteReader;
 import modello.writeUtenti.UtenteWriter;
-import reti.CartelleUtente;
-import reti.PeerAsServer;
+import rete.CartelleUtente;
+import rete.PeerAsServer;
 import tests.Main;
 
 

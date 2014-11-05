@@ -1,7 +1,7 @@
 package tests;
 
-import reti.PeerAsClient;
-import reti.PeerAsServer;
+import rete.PeerAsClient;
+import rete.PeerAsServer;
 
 public class TestSendFiles {
 
