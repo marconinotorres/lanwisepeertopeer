@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 
 import modello.FileHandler;
 import modello.Utente;
-import modello.readUtenti.UtenteReader;
+import modello.letturaListaUtenti.UtenteReader;
 import modello.writeUtenti.UtenteWriter;
 
 /**
