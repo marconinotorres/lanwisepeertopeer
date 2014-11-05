@@ -21,6 +21,7 @@ import multimedia.contents.MultimediaContents;
 import multimedia.placers.ProxyPlacer;
 import multimedia.settings.MultimediaSettings;
 import ordinamento.FiltraPerNomeFile;
+import ordinamento.FiltraPerNomeUtente;
 import ordinamento.ProxyOrdinamento;
 import rete.ListSignal;
 
@@ -30,33 +31,30 @@ import rete.ListSignal;
  * @author Giuseppe Restivo
  * 
  */
-public class FrameCondivisione extends JFrame implements Observer {
+public class FrameCondivisione extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private final Timer timer = new Timer(4000, null);
+	private final Timer timer = new Timer(1000,null);
 
-	private ProxyOrdinamento proxy = new ProxyOrdinamento(
-			new FiltraPerNomeFile());
-	
 	private MultimediaList multimediaList;
 	private MultimediaPanel panel2 = new MultimediaPanel();
 
-	private IMultimediaContents contents;
+	private IMultimediaContents contents = new MultimediaContents();
 	private IMultimediaSettings setting;
 	private ProxyPlacer proxyPlacer;
+	private ProxyOrdinamento proxyOrdinamento;
 
 	public FrameCondivisione() {
-
-		proxy.addObserver(this);
-
+		
 		JMenuBar menubar = new JMenuBar();
 		JPanel panel = new JPanel();
 
-		MenuOrdinamento ordinamentoMenu = new MenuOrdinamento(proxy);
-		MenuServizi caricamentoMenu = new MenuServizi();
-
-		menubar.add(caricamentoMenu);
+		
+		MenuOrdinamento ordinamentoMenu = new MenuOrdinamento();
+		MenuServizi serviziMenu = new MenuServizi();
+		
+		menubar.add(serviziMenu);
 		menubar.add(ordinamentoMenu);
 
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -71,17 +69,20 @@ public class FrameCondivisione extends JFrame implements Observer {
 		setTitle("LWP2P");
 		setDefaultCloseOperation(FrameCondivisione.EXIT_ON_CLOSE);
 		setVisible(true);
-
-		contents = new MultimediaContents();
-
-		contents.addContents("OtherFilesList.txt");
+		
+		
 		proxyPlacer = new ProxyPlacer(MultimediaListController.getController()
 				.getvPlacer());
+		
 		setting = new MultimediaSettings();
-
+		proxyOrdinamento = new ProxyOrdinamento(ordinamentoMenu.getNomeUtente());
+		
+		
 		MultimediaListController.getController().setContents(contents);
 
-		multimediaList = new MultimediaList(contents, proxyPlacer, setting);
+		multimediaList = new MultimediaList(contents, proxyPlacer, setting, proxyOrdinamento);
+		ordinamentoMenu.setMultimedia(multimediaList);
+		
 		MultimediaListController.getController().setMultimediaList(
 				multimediaList);
 
@@ -96,10 +97,8 @@ public class FrameCondivisione extends JFrame implements Observer {
 				}
 				contents.getContentsList().clear();
 				contents.addContents("OtherFilesList.txt");
-				multimediaList.addLista(contents, proxyPlacer, setting);
-				proxy.filtraListaFile(multimediaList.getList());
+				
 				panel2.repaint();
-
 			}
 		});
 		timer.start();
@@ -108,14 +107,7 @@ public class FrameCondivisione extends JFrame implements Observer {
 		addKeyListener(MultimediaListController.getController());
 		multimediaList.addObserver(panel2);
 		add(panel2);
+		
+	}	
 
-	}
-
-	@Override
-	public void update(Observable o, Object arg) {
-
-		proxy.filtraListaFile(multimediaList.getList());
-		panel2.update(multimediaList, proxy);
-
-	}
 }

@@ -1,4 +1,4 @@
-package ordinamento;
+package multimedia;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import modello.FileHandler;
  * @author giusepperestivo
  *
  */
-public interface IFiltro {
+public interface IOrdinamento {
 
 	
 	/**

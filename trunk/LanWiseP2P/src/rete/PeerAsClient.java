@@ -1,7 +1,13 @@
 package rete;
 
+import grafica.EccezioneDialog;
+
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
+
+import modello.GestioneEccezioni;
 
 /**
  * Viene attivato quando si vuole in download un certo file e
@@ -26,32 +32,50 @@ public class PeerAsClient extends Thread {
 		}
 	}
 
-	public void apriConnessione() throws Exception {
+	public void apriConnessione()  {
 
 		OutputStreamWriter osw;
 		Socket sock = null;
 
 		System.err.println(IP_SERVER);
-		sock = new Socket(IP_SERVER, INumberPort.SOCKET_PORT_PEER);
-		System.out.println("(PC) Connecting...");
+		try {
+			sock = new Socket(IP_SERVER, INumberPort.SOCKET_PORT_PEER);
+			System.out.println("(PC) Connecting...");
 
-		
-		osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
-		osw.write(FILE_TO_REQUEST, 0, FILE_TO_REQUEST.length());
+			osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
+			osw.write(FILE_TO_REQUEST, 0, FILE_TO_REQUEST.length());
 
-		osw.flush();
-		osw.close();
+			osw.flush();
+			osw.close();
 
-		sleep(0);
+			sleep(0);
 
-		sock.close();
+			sock.close();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			EccezioneDialog dialog = new EccezioneDialog(new GestioneEccezioni(
+					e.getMessage()));
+			dialog.setVisible(true);
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		Client client = new Client();
 		
 		client.setFILE_TO_RECEIVED(FILE_TO_RECEIVED);
 		client.setIP_SERVER(IP_SERVER);
 		client.start();
-		client.join();
+		try {
+			client.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

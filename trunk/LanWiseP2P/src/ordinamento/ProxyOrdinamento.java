@@ -4,37 +4,29 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 import modello.FileHandler;
+import multimedia.IOrdinamento;
 
 /**
  * Proxy, cambia a run-time l'istanza delle varie tipologie di filtro
  * @author Giuseppe Restivo
  *
  */
-public class ProxyOrdinamento extends Observable implements IFiltro{
+public class ProxyOrdinamento implements IOrdinamento{
 
-	private IFiltro filtro;
+	private IOrdinamento filtro;
 	
-	public void setFiltro(IFiltro filtro) {
+	public void setFiltro(IOrdinamento filtro) {
 		this.filtro = filtro;
-		update();
 	}
 	
-	public ProxyOrdinamento(IFiltro filtro) {
+	public ProxyOrdinamento(IOrdinamento filtro) {
 		super();
 		this.filtro = filtro;
-		update();
 	}
 
 	@Override
 	public ArrayList<FileHandler> filtraListaFile(ArrayList<FileHandler> filePresenti) {
 		return filtro.filtraListaFile(filePresenti);
-	}
-	
-	
-	
-	public void update(){
-		setChanged();
-		notifyObservers();
 	}
 	
 }

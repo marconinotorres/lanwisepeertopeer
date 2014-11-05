@@ -9,6 +9,7 @@ import java.awt.Graphics;
  * @author Giuseppe Restivo
  */
 public interface IMultimediaSettings {
+	
 	/**
 	 * Applica i setting
 	 * 
