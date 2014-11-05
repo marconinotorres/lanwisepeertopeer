@@ -18,7 +18,8 @@ public class MultimediaList extends Observable implements Drawable {
 	private IPlacer placer;
 	private IMultimediaSettings settings;
 	private IMultimediaContents contents;
-
+	private IOrdinamento ordinamento;
+	
 	/**
 	 * Inizializza i:
 	 * 
@@ -30,28 +31,34 @@ public class MultimediaList extends Observable implements Drawable {
 	 * @param settings
 	 *            I {@link IMultimediaSettings} descrivendo come la lista dei
 	 *            contents si vuole disegnare.
+	 *            
+	 * @param ordinamento
+	 *            I {@link IOrdinamento} ordina la lista.
 	 */
 	public MultimediaList(IMultimediaContents contenuti, IPlacer placer,
-			IMultimediaSettings settings) {
+			IMultimediaSettings settings, IOrdinamento ordinamento) {
 		super();
 		this.contents = contenuti;
 		this.placer = placer;
 		this.settings = settings;
+		this.ordinamento = ordinamento;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see contenutiMultimediali.IDrawable#draw(java.awt.Graphics)
+	 * @see multimedia.Drawable#draw(java.awt.Graphics)
 	 */
 	@Override
 	public void draw(Graphics graphics) {
 
-		for (int i = 0; i < contents.getContentsLength(); i++) {
+		System.err.println("sono nel draw");
+		ArrayList<FileHandler> contenuto = ordinamento.filtraListaFile(contents.getContentsList());
+		for (int i = 0; i < contenuto.size(); i++) {
 			int slot = i - index;
 			settings.applySlotSettings(graphics, slot);
-			placer.place(graphics, slot, contents.getContentsList().get(i)
+			placer.place(graphics, slot, contenuto.get(i)
 					.toString());
+			System.out.println(contenuto.get(i).getNomeFile());
 		}
 	}
 
@@ -68,6 +75,10 @@ public class MultimediaList extends Observable implements Drawable {
 		return placer;
 	}
 
+	public IOrdinamento getOrdinamento() {
+		return ordinamento;
+	}
+	
 	public int getIndex() {
 		return index;
 	}
@@ -85,20 +96,6 @@ public class MultimediaList extends Observable implements Drawable {
 		update();
 	}
 
-	public void addLista(IMultimediaContents contenuti, IPlacer placer,
-			IMultimediaSettings settings) {
-		this.contents = contenuti;
-		this.placer = placer;
-		this.settings = settings;
-
-	}
-
-	/**
-	 * @return la lista di contents
-	 */
-	public ArrayList<FileHandler> getList() {
-		return contents.getContentsList();
-	}
 
 	public void update() {
 		setChanged();
