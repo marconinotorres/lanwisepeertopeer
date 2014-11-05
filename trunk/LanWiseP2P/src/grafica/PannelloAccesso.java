@@ -13,8 +13,8 @@ import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
 import modello.Utente;
-import modello.readUtenti.TestReadUtenti;
-import modello.readUtenti.UtenteReader;
+import modello.letturaListaUtenti.TestReadUtenti;
+import modello.letturaListaUtenti.UtenteReader;
 import modello.writeUtenti.UtenteWriter;
 import reti.CartelleUtente;
 import reti.PeerAsServer;

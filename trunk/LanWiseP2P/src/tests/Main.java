@@ -10,8 +10,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import modello.Utente;
-import modello.readUtenti.TestReadUtenti;
-import modello.readUtenti.UtenteReader;
+import modello.letturaListaUtenti.TestReadUtenti;
+import modello.letturaListaUtenti.UtenteReader;
 import modello.writeUtenti.TestWriteConnessione;
 import modello.writeUtenti.UtenteWriter;
 
