@@ -6,12 +6,12 @@ import multimedia.IPlacer;
 
 /**
  * @author Giuseppe Restivo
- *
+ * 
  */
 public class ProxyPlacer implements IPlacer {
 
 	private IPlacer placer;
-	
+
 	public ProxyPlacer(IPlacer placer) {
 		super();
 		this.placer = placer;
@@ -22,8 +22,7 @@ public class ProxyPlacer implements IPlacer {
 		placer.place(graphics, slot, content);
 	}
 
-	
-	public void setPlacer(IPlacer placer){
-		this.placer=placer;
+	public void setPlacer(IPlacer placer) {
+		this.placer = placer;
 	}
 }

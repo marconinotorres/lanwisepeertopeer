@@ -1,4 +1,4 @@
-package reti;
+package rete;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,17 +14,14 @@ import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import modello.FileHandler;
-import modello.Utente;
-import modello.letturaListaUtenti.UtenteReader;
-import modello.writeUtenti.UtenteWriter;
+import modello.UtenteSelected;
 
 /**
- * Invia in broadcast la lista dei propri file
- * 
- * @author giusepperestivo
- *
- */
+* Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt'
+* 
+* @author Giuseppe Restivo
+*
+*/
 public class BroadcastServer extends Thread {
 
 	protected DatagramSocket socket = null;
@@ -33,21 +30,20 @@ public class BroadcastServer extends Thread {
 	static File upFolder;
 
 	public BroadcastServer(File upFolder) throws IOException {
-		
+
 		this.upFolder = upFolder;
-		socket = new DatagramSocket(4445);
+		socket = new DatagramSocket();
 		socket.setSendBufferSize(65536);
 
 	}
 
-
 	public void run() {
-		while(true) {
-			
+		while (true) {
+
 			moreLines = true;
 
 			listFilesForFolder(upFolder);
-			
+
 			try {
 				in = new BufferedReader(new FileReader("MyFilesList.txt"));
 			} catch (FileNotFoundException e) {
@@ -62,17 +58,17 @@ public class BroadcastServer extends Thread {
 					buf = dString.getBytes();
 
 					InetAddress group = InetAddress.getByName("230.0.0.1");
-					DatagramPacket packet = new DatagramPacket(buf, buf.length, group, 4446);
+					DatagramPacket packet = new DatagramPacket(buf, buf.length,
+							group, 4446);
 					socket.send(packet);
-//					System.out.println("ho inviato un pacchetto"+dString);
-
+					
 
 				} catch (IOException e) {
 					e.printStackTrace();
 					moreLines = false;
 				}
 			}
-			//socket.close();
+			
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
@@ -81,7 +77,6 @@ public class BroadcastServer extends Thread {
 			}
 		}
 	}
-
 
 	protected String getNextLine() {
 		String returnValue = null;
@@ -97,8 +92,7 @@ public class BroadcastServer extends Thread {
 		return returnValue;
 	}
 
-	public void listFilesForFolder(final File folder) {
-		
+	private void listFilesForFolder(final File folder) {
 
 		try {
 			Files.deleteIfExists(Paths.get("MyFilesList.txt"));
@@ -108,23 +102,30 @@ public class BroadcastServer extends Thread {
 
 		PrintWriter out = null;
 		try {
-			out = new PrintWriter(new BufferedWriter(new FileWriter("MyFilesList.txt", true)));
+			out = new PrintWriter(new BufferedWriter(new FileWriter(
+					"MyFilesList.txt", true)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
 
 		for (final File fileEntry : folder.listFiles()) {
 			if (fileEntry.isDirectory()) {
 				listFilesForFolder(fileEntry);
 			} else {
 				if (!fileEntry.getName().startsWith(".")) {
-					
-					String file = fileEntry.getName()+","+(int)fileEntry.length()+","+
-							UtenteWriter.getUtente().getUtenteCollegato().getCognome()+","+
-							UtenteWriter.getUtente().getUtenteCollegato().getNome();
+
+					String file = fileEntry.getAbsolutePath()
+							+ ","
+							+ (int) fileEntry.length()
+							+ ","
+							+ UtenteSelected.getUtente().getUtenteCollegato()
+									.getCognome()
+							+ ","
+							+ UtenteSelected.getUtente().getUtenteCollegato()
+									.getNome() + "," + fileEntry.getName();
+
 					out.println(file);
+
 					out.flush();
 				}
 			}
