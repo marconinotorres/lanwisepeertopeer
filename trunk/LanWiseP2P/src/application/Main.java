@@ -1,4 +1,4 @@
-package tests;
+package application;
 
 import grafica.PannelloAccesso;
 
@@ -9,26 +9,24 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import modello.Utente;
+import modello.LetturaListaUtenti;
+import modello.UtenteSelected;
 import modello.letturaListaUtenti.TestReadUtenti;
-import modello.letturaListaUtenti.UtenteReader;
-import modello.writeUtenti.TestWriteConnessione;
-import modello.writeUtenti.UtenteWriter;
+import modello.writeUtenteSelezionato.TestWriteConnessione;
 
 public class Main {
-	
+
 	public static JFrame frame;
-	
+
 	public static JFrame getFrame() {
 		return frame;
 	}
-	
+
 	public static void main(String[] args) {
-		
-		
-		Main.frame=new JFrame("LWP2P");
+
+		Main.frame = new JFrame("LWP2P");
 		try {
-			UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName() );
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -42,23 +40,23 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		UtenteReader.setUtente(new TestReadUtenti());
-		UtenteWriter.setUtente(new TestWriteConnessione());
-		
-		PannelloAccesso p=new PannelloAccesso();
-		
+
+		LetturaListaUtenti.setUtente(new TestReadUtenti());
+		UtenteSelected.setUtente(new TestWriteConnessione());
+
+		PannelloAccesso p = new PannelloAccesso();
+
 		frame.getContentPane().add(p);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setBounds((int) screenSize.getWidth() >>3,
+		frame.setBounds((int) screenSize.getWidth() >> 3,
 				(int) screenSize.getHeight() >> 3,
 				(int) screenSize.getWidth() >> 3,
-				(int) screenSize.getHeight() >> 2 );
-		
+				(int) screenSize.getHeight() >> 2);
+
 		frame.setVisible(true);
-		
+
 	}
 
 }
