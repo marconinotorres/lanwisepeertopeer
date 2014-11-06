@@ -1,7 +1,8 @@
 package modello;
 
+
 /**
- * Patter Proxy per cambiare a run-time la tipologia di servizio.
+ * Pattern Proxy per cambiare a run-time la tipologia di servizio.
  * 
  * @author Giuseppe Restivo
  * 

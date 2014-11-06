@@ -2,20 +2,14 @@ package grafica;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
-import javax.swing.JFileChooser;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import modello.AggiungiFileDaCondividere;
-import modello.CartelleUtente;
 import modello.ProxyServizio;
-import modello.RimuoviFileDaCondividere;
+import modello.RimuoviFileCondiviso;
 import modello.Servizio;
 
 /**
@@ -34,7 +28,7 @@ public class MenuServizi extends JMenu {
 
 	private ProxyServizio servizio = new ProxyServizio(null);
 	private Servizio add = new AggiungiFileDaCondividere();
-	private Servizio rem = new RimuoviFileDaCondividere();
+	private Servizio rem = new RimuoviFileCondiviso();
 
 	public MenuServizi() {
 		super("Menu");
