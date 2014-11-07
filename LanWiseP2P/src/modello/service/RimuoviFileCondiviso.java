@@ -1,8 +1,11 @@
-package modello;
+package modello.service;
 
 import java.io.File;
 
 import javax.swing.JFileChooser;
+
+import modello.CartelleUtente;
+import modello.Servizio;
 
 /**
  * Rimuove un file dalla Cartella condivisa

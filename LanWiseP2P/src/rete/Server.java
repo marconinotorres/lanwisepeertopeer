@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import modello.GestioneEccezioni;
+import modello.MessaggioEccezione;
 
 public class Server extends Thread {
 													
@@ -56,7 +56,7 @@ public class Server extends Thread {
 		os.flush();
 		System.out.println("(S) Done.");
 
-		EccezioneDialog dialog = new EccezioneDialog(new GestioneEccezioni(
+		EccezioneDialog dialog = new EccezioneDialog(new MessaggioEccezione(
 				"Download Completato"));
 		bis.close();
 		os.close();

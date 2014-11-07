@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import modello.GestioneEccezioni;
+import modello.MessaggioEccezione;
 
 /**
  * Viene attivato quando si vuole in download un certo file e
@@ -56,7 +56,7 @@ public class PeerAsClient extends Thread {
 			e.printStackTrace();
 		} catch (IOException e) {
 			
-			EccezioneDialog dialog = new EccezioneDialog(new GestioneEccezioni(
+			EccezioneDialog dialog = new EccezioneDialog(new MessaggioEccezione(
 					e.getMessage()));
 			dialog.setVisible(true);
 			

@@ -35,7 +35,7 @@ public class FrameCondivisione extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private final Timer timer = new Timer(1000,null);
+	private final Timer timer = new Timer(2000,null);
 
 	private MultimediaList multimediaList;
 	private MultimediaPanel panel2 = new MultimediaPanel();

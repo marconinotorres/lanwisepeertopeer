@@ -1,4 +1,4 @@
-package modello;
+package modello.service;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,6 +7,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
+
+import modello.CartelleUtente;
+import modello.Servizio;
 
 /**
  * Aggiunge un file nella cartella Condivisa
@@ -61,6 +64,5 @@ public class AggiungiFileDaCondividere implements Servizio {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
+	}	
 }

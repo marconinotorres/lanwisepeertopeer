@@ -33,7 +33,7 @@ public class MultimediaList extends Observable implements Drawable {
 	 *            contents si vuole disegnare.
 	 *            
 	 * @param ordinamento
-	 *            I {@link IOrdinamento} ordina la lista.
+	 *            I {@link IOrdinamento} descrive l'ordine della lista
 	 */
 	public MultimediaList(IMultimediaContents contenuti, IPlacer placer,
 			IMultimediaSettings settings, IOrdinamento ordinamento) {
@@ -51,14 +51,12 @@ public class MultimediaList extends Observable implements Drawable {
 	@Override
 	public void draw(Graphics graphics) {
 
-		System.err.println("sono nel draw");
 		ArrayList<FileHandler> contenuto = ordinamento.filtraListaFile(contents.getContentsList());
 		for (int i = 0; i < contenuto.size(); i++) {
 			int slot = i - index;
 			settings.applySlotSettings(graphics, slot);
 			placer.place(graphics, slot, contenuto.get(i)
 					.toString());
-			System.out.println(contenuto.get(i).getNomeFile());
 		}
 	}
 
