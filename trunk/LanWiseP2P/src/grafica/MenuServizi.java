@@ -4,13 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import modello.AggiungiFileDaCondividere;
-import modello.ProxyServizio;
-import modello.RimuoviFileCondiviso;
 import modello.Servizio;
+import modello.service.AggiungiFileDaCondividere;
+import modello.service.ProxyServizio;
+import modello.service.RimuoviFileCondiviso;
 
 /**
  * Menu grafico dove è possibile scegliere un servizio, come ad esempio
