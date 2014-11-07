@@ -5,7 +5,7 @@ import java.util.Comparator;
 import modello.FileHandler;
 
 /**
- * Comparatore Alfabetico Per NomeUtente, ordina la lista in ordine alfabetico per nomeUtente
+ * Comparatore Alfabetico Per NomeUtente, ordina la lista in ordine alfabetico per cognome
  * @author Giuseppe Restivo
  *
  */
