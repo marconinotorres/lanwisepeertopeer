@@ -14,7 +14,6 @@ import modello.FileHandler;
 public class ComparatoreAlfabeticoNomeFile implements Comparator<FileHandler> {
 
 	
-	
 	@Override
 	public int compare(FileHandler file1, FileHandler file2) {
 		
