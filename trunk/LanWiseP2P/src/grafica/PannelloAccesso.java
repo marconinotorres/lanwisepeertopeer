@@ -19,7 +19,7 @@ import modello.Utente;
 import modello.UtenteSelected;
 
 /**
- * Permette di identificare l'utente che si connette
+ * Permette di identificare l'utente che si vuole connettere
  * 
  * @author giusepperestivo
  * 
@@ -28,7 +28,7 @@ public class PannelloAccesso extends JPanel {
 
 	private static final long serialVersionUID = 0;
 
-	private final ArrayList<JRadioButton> buttonUtenti = new ArrayList<>();
+	private final ArrayList<JRadioButton> buttonUtenti = new ArrayList<JRadioButton>();
 
 	public PannelloAccesso() {
 
@@ -52,15 +52,15 @@ public class PannelloAccesso extends JPanel {
 		List<Utente> lista = LetturaListaUtenti.getUtente().readFileUtente();
 
 		for (int i = 0; i < buttonUtenti.size(); i++) {
-			final String utenteCollegato = lista.get(i).getCognome();
-			final String nomeUtColl = lista.get(i).getNome();
+			final String cognomeUtente = lista.get(i).getCognome();
+			final String nomeUtente = lista.get(i).getNome();
 			buttonUtenti.get(i).addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 
 					UtenteSelected.getUtente().setUtenteCollegato(
-							new Utente(nomeUtColl, utenteCollegato));
+							new Utente(nomeUtente, cognomeUtente));
 
 					new FrameCartellaCondivisione();
 					Main.getFrame().dispose();

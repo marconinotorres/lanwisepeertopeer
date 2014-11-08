@@ -14,7 +14,7 @@ import modello.MessaggioEccezione;
  * 
  * avvia il Client effettivo che riceve i byte e li salva.
  * 
- * @author giusepperestivo
+ * @author Giuseppe Restivo
  * 
  */
 public class PeerAsClient extends Thread {

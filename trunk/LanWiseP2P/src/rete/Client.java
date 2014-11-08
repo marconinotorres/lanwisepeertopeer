@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
 
+/**
+ * Riceve i byte del file che si vuole scaricare
+ * @author giusepperestivo
+ *
+ */
 public class Client extends Thread {
 
 	

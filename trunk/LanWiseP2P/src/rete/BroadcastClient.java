@@ -1,5 +1,7 @@
 package rete;
 
+import grafica.FrameCartellaSalvataggio;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -14,8 +16,14 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
- * Riceve in broadcast la lista di tutti i file da tutti gli utenti connessi.
- * Viene implementato il protocollo UDP
+ * Riceve in broadcast la lista di tutti i file da tutti gli utenti connessi e genera il
+ * file "OtherFilesList.txt" che contiene l'elenco dettagliato di tutti i file di tutti gli utenti 
+ * che devono essere condivisi e visualizzati nel frame
+ * 
+ * Implementa il protocollo UDP.
+ * 
+ * Questa classe viene instanziata quando l'utente ha concluso la fase di 
+ * identificazione delle cartelle {@link FrameCartellaSalvataggio}.
  * 
  * @author Giuseppe Restivo
  * 

@@ -31,7 +31,7 @@ public class TestReadUtenti extends LetturaListaUtenti {
 	@Override
 	public List<Utente> readFileUtente() {
 
-		List<Utente> lista = new ArrayList<>();
+		List<Utente> lista = new ArrayList<Utente>();
 
 		File file = new File("data/listaUtenti.txt");
 

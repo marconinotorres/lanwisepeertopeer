@@ -2,9 +2,9 @@ package modello;
 
 
 /**
- * Viene utilizzato il Patter singleton 
+ * Viene utilizzato il Pattern Singleton 
  * 
- * perchè una volta che un utente si è 'loggato' non può più modificarsi.
+ * perchè una volta che un utente si è 'loggato' non può più cambiare.
  * 
  * @author giusepperestivo
  *
@@ -33,7 +33,8 @@ public abstract class UtenteSelected {
 	}
 	
 	/**
-	 * Scrive sul file che l'utente generico si è collegato, allora imposta gli indici S ed N
+	 * Scrive sul file che l'utente selezionato si è collegato o scollegato, allora imposta gli indici S (collegato) 
+	 * ed N (scollegato)
 	 * 
 	 * @param utenteCollegato
 	 * @param l'indice: 'S' o 'N'
