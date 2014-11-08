@@ -6,4 +6,3 @@
 /Users/giusepperestivo/Desktop/Condividere/Luciano Ligabue - Secondo tempo (CD Completo).mp3,75201622,Restivo,Giuseppe,Luciano Ligabue - Secondo tempo (CD Completo).mp3
 /Users/giusepperestivo/Desktop/Condividere/matlab_crash_dump.376-1,8142,Restivo,Giuseppe,matlab_crash_dump.376-1
 /Users/giusepperestivo/Desktop/Condividere/OtherFilesList.txt,218,Restivo,Giuseppe,OtherFilesList.txt
-/Users/giusepperestivo/Desktop/Condividere/ServiceDBMS.class,3260,Restivo,Giuseppe,ServiceDBMS.class

@@ -12,6 +12,11 @@ import java.net.Socket;
 
 import modello.MessaggioEccezione;
 
+/**
+ * Trasferisce il file scelto nella cartella Salvataggio, fa il download del file
+ * @author giusepperestivo
+ *
+ */
 public class Server extends Thread {
 													
 	private String FILE_TO_SEND;

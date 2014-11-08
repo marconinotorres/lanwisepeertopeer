@@ -1,5 +1,6 @@
 package rete;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,7 +18,12 @@ import java.nio.file.Paths;
 import modello.UtenteSelected;
 
 /**
-* Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt'
+* Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt', che poi verrˆ letto
+* dal {@link BroadcastClient} per generare la lista completa di tutti i file di tutti gli utenti.
+* 
+* Implementa il protocollo UDP
+* 
+* Viene instanziato quando l'utente sceglie la cartella che vuole condividere
 * 
 * @author Giuseppe Restivo
 *
@@ -27,7 +33,7 @@ public class BroadcastServer extends Thread {
 	protected DatagramSocket socket = null;
 	protected BufferedReader in = null;
 	protected boolean moreLines = true;
-	static File upFolder;
+	private File upFolder;
 
 	public BroadcastServer(File upFolder) throws IOException {
 
