@@ -15,7 +15,7 @@ import modello.Utente;
 /**
  * N -> non è connesso S -> è connesso
  * 
- * Per il momento legge da un file di testo, ma sarà sostituita da una possibile 
+ * Per il momento legge da un file di testo, ma sarà sostituita da una possibile
  * base di dati
  * 
  * @author Giuseppe Restivo

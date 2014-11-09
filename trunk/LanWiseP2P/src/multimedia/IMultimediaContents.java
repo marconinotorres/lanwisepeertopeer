@@ -31,5 +31,4 @@ public interface IMultimediaContents {
 	 */
 	public void execute(int index);
 
-	
 }

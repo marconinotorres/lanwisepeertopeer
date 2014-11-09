@@ -8,12 +8,12 @@ import java.net.Socket;
 
 /**
  * Riceve i byte del file che si vuole scaricare
+ * 
  * @author giusepperestivo
- *
+ * 
  */
 public class Client extends Thread {
 
-	
 	private String IP_SERVER;
 	private String FILE_TO_RECEIVED;
 
@@ -25,9 +25,9 @@ public class Client extends Thread {
 		FILE_TO_RECEIVED = fILE_TO_RECEIVED;
 	}
 
-	private final static int FILE_SIZE = 6022386; 
+	private final static int FILE_SIZE = 6022386;
 
-	public void run() { 
+	public void run() {
 		try {
 			esegui();
 		} catch (IOException e) {
@@ -61,7 +61,6 @@ public class Client extends Thread {
 
 		bos.write(mybytearray, 0, current);
 		bos.flush();
-		
 
 		fos.close();
 		bos.close();

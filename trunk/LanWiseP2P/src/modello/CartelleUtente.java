@@ -2,7 +2,7 @@ package modello;
 
 /**
  * Imposta la cartella da Condividere e la cartella dove si andranno a salvare i
- * file
+ * file scaricati
  * 
  * @author Giuseppe Restivo
  * 

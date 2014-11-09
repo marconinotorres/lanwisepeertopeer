@@ -16,13 +16,14 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
- * Riceve in broadcast la lista di tutti i file da tutti gli utenti connessi e genera il
- * file "OtherFilesList.txt" che contiene l'elenco dettagliato di tutti i file di tutti gli utenti 
- * che devono essere condivisi e visualizzati nel frame
+ * Riceve in broadcast la lista di tutti i file da tutti gli utenti connessi e
+ * genera il file "OtherFilesList.txt" che contiene l'elenco dettagliato di
+ * tutti i file di tutti gli utenti che devono essere condivisi e visualizzati
+ * nel frame
  * 
  * Implementa il protocollo UDP.
  * 
- * Questa classe viene instanziata quando l'utente ha concluso la fase di 
+ * Questa classe viene instanziata quando l'utente ha concluso la fase di
  * identificazione delle cartelle {@link FrameCartellaSalvataggio}.
  * 
  * @author Giuseppe Restivo
@@ -33,14 +34,15 @@ public class BroadcastClient extends Thread {
 	public void run() {
 
 		ListSignal signal = ListSignal.getInstance();
-		
+
 		while (true) {
 
 			signal.setHasDataToProcess(true);
 			try {
 				Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
 				MulticastSocket socket = new MulticastSocket(4446);
-				InetAddress address = InetAddress.getByName("230.0.0.1");
+				InetAddress address = InetAddress
+						.getByName(INumberPort.NOMEPORTABROADCAST);
 				socket.joinGroup(address);
 				socket.setReceiveBufferSize(65536);
 
@@ -86,7 +88,7 @@ public class BroadcastClient extends Thread {
 				socket.leaveGroup(address);
 				socket.close();
 
-				signal.setHasDataToProcess(false);		
+				signal.setHasDataToProcess(false);
 				try {
 					sleep(5000);
 				} catch (InterruptedException e) {

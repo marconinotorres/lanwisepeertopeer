@@ -19,12 +19,11 @@ import modello.MessaggioEccezione;
  */
 public class PeerAsClient extends Thread {
 
-	
 	private String IP_SERVER;
 	private String FILE_TO_REQUEST;
 	private String FILE_TO_RECEIVED;
 
-	public void run() { 
+	public void run() {
 		try {
 			apriConnessione();
 		} catch (Exception e) {
@@ -32,15 +31,13 @@ public class PeerAsClient extends Thread {
 		}
 	}
 
-	public void apriConnessione()  {
+	public void apriConnessione() {
 
 		OutputStreamWriter osw;
 		Socket sock = null;
 
-		System.err.println(IP_SERVER);
 		try {
 			sock = new Socket(IP_SERVER, INumberPort.SOCKET_PORT_PEER);
-			System.out.println("(PC) Connecting...");
 
 			osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
 			osw.write(FILE_TO_REQUEST, 0, FILE_TO_REQUEST.length());
@@ -55,18 +52,18 @@ public class PeerAsClient extends Thread {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			
-			EccezioneDialog dialog = new EccezioneDialog(new MessaggioEccezione(
-					e.getMessage()));
+
+			EccezioneDialog dialog = new EccezioneDialog(
+					new MessaggioEccezione(e.getMessage()));
 			dialog.setVisible(true);
-			
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		Client client = new Client();
-		
+
 		client.setFILE_TO_RECEIVED(FILE_TO_RECEIVED);
 		client.setIP_SERVER(IP_SERVER);
 		client.start();

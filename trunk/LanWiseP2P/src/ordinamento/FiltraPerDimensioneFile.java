@@ -6,12 +6,12 @@ import java.util.Collections;
 import modello.FileHandler;
 import multimedia.IOrdinamento;
 
-
 /**
- * Organizza la lista di File in ordine crescente della dimensione dei file, usando il Comparator sviluppato nella classe 
+ * Organizza la lista di File in ordine crescente della dimensione dei file,
+ * usando il Comparator sviluppato nella classe
  * 
  * @author Giuseppe Restivo
- *
+ * 
  */
 public class FiltraPerDimensioneFile implements IOrdinamento {
 
@@ -21,6 +21,5 @@ public class FiltraPerDimensioneFile implements IOrdinamento {
 		Collections.sort(filePresenti, new ComparatoreDimensione());
 		return filePresenti;
 	}
-	
-}
 
+}

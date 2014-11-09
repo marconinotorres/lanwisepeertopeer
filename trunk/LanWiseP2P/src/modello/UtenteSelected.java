@@ -1,13 +1,14 @@
 package modello;
 
-
 /**
- * Viene utilizzato il Pattern Singleton 
+ * Viene utilizzato il Pattern Singleton
  * 
  * perchè una volta che un utente si è 'loggato' non può più cambiare.
  * 
+ * Imposta l'utente che si è collegato all'applicazione
+ * 
  * @author giusepperestivo
- *
+ * 
  */
 public abstract class UtenteSelected {
 
@@ -21,7 +22,6 @@ public abstract class UtenteSelected {
 		UtenteSelected.utenteSelected = utente;
 	}
 
-	
 	private Utente utenteCollegato;
 
 	public Utente getUtenteCollegato() {
@@ -31,13 +31,14 @@ public abstract class UtenteSelected {
 	public void setUtenteCollegato(Utente utenteCollegato2) {
 		this.utenteCollegato = utenteCollegato2;
 	}
-	
+
 	/**
-	 * Scrive sul file che l'utente selezionato si è collegato o scollegato, allora imposta gli indici S (collegato) 
-	 * ed N (scollegato)
+	 * Scrive sul file che l'utente selezionato si è collegato o scollegato,
+	 * allora imposta gli indici S (collegato) ed N (scollegato)
 	 * 
 	 * @param utenteCollegato
-	 * @param l'indice: 'S' o 'N'
+	 * @param l
+	 *            'indice: 'S' o 'N'
 	 */
 	public abstract void writeConnessione(String utenteCollegato,
 			String carattere);

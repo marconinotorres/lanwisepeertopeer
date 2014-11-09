@@ -16,7 +16,6 @@ import modello.CartelleUtente;
 import grafica.FrameCondivisione;
 import rete.BroadcastClient;
 
-
 /**
  * Permette di selezionare la cartella dove si salvano i file scaricati
  * 

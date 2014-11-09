@@ -12,11 +12,10 @@ import modello.Utente;
 import modello.UtenteSelected;
 
 /**
- * N -> non è connesso S -> è connesso
- * l'indice N indica che l'utente non è collegato,
- * S invece, indica che l'utente è connesso.
+ * Imposta nel file "listaUtenti.txt" 'N' o 'S' l'indice N indica che l'utente
+ * non è collegato, S invece, indica che l'utente è connesso.
  * 
- * @author giusepperestivo
+ * @author Giuseppe Restivo
  * 
  */
 public class TestWriteConnessione extends UtenteSelected {
@@ -30,7 +29,7 @@ public class TestWriteConnessione extends UtenteSelected {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String line = reader.readLine();
 			FileWriter writer = new FileWriter(file);
-			
+
 			while (line != null) {
 				StringTokenizer token = new StringTokenizer(line);
 				String nome = token.nextToken();

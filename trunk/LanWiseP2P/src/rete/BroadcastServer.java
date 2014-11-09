@@ -18,16 +18,17 @@ import java.nio.file.Paths;
 import modello.UtenteSelected;
 
 /**
-* Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt', che poi verrˆ letto
-* dal {@link BroadcastClient} per generare la lista completa di tutti i file di tutti gli utenti.
-* 
-* Implementa il protocollo UDP
-* 
-* Viene instanziato quando l'utente sceglie la cartella che vuole condividere
-* 
-* @author Giuseppe Restivo
-*
-*/
+ * Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt',
+ * che poi verrˆ letto dal {@link BroadcastClient} per generare la lista
+ * completa di tutti i file di tutti gli utenti.
+ * 
+ * Implementa il protocollo UDP
+ * 
+ * Viene instanziato quando l'utente sceglie la cartella che vuole condividere
+ * 
+ * @author Giuseppe Restivo
+ * 
+ */
 public class BroadcastServer extends Thread {
 
 	protected DatagramSocket socket = null;
@@ -63,18 +64,18 @@ public class BroadcastServer extends Thread {
 					String dString = getNextLine();
 					buf = dString.getBytes();
 
-					InetAddress group = InetAddress.getByName("230.0.0.1");
+					InetAddress group = InetAddress
+							.getByName(INumberPort.NOMEPORTABROADCAST);
 					DatagramPacket packet = new DatagramPacket(buf, buf.length,
 							group, 4446);
 					socket.send(packet);
-					
 
 				} catch (IOException e) {
 					e.printStackTrace();
 					moreLines = false;
 				}
 			}
-			
+
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {

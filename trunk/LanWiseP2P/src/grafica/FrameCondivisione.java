@@ -44,15 +44,15 @@ public class FrameCondivisione extends JFrame {
 	private IMultimediaSettings setting;
 	private ProxyPlacer proxyPlacer;
 	private ProxyOrdinamento proxyOrdinamento;
-	
+
 	private JMenuBar menubar = new JMenuBar();
 	private MenuOrdinamento ordinamentoMenu = new MenuOrdinamento();
 	private MenuServizi serviziMenu = new MenuServizi();
-	
+
 	public FrameCondivisione() {
 
 		parteGrafica();
-		
+
 		proxyPlacer = new ProxyPlacer(MultimediaListController.getController()
 				.getvPlacer());
 
@@ -86,22 +86,22 @@ public class FrameCondivisione extends JFrame {
 		panel2.setList(multimediaList);
 		addKeyListener(MultimediaListController.getController());
 		multimediaList.addObserver(panel2);
-		
+
 		setVisible(true);
 	}
-	
-	private void parteGrafica(){
-		
+
+	private void parteGrafica() {
+
 		menubar.add(serviziMenu);
 		menubar.add(ordinamentoMenu);
-		
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 		setBounds((int) screenSize.getWidth() >> 2,
 				(int) screenSize.getHeight() >> 3,
 				(int) screenSize.getWidth() >> 1,
 				(int) screenSize.getHeight() >> 1);
-		
+
 		setJMenuBar(menubar);
 		setTitle("LWP2P");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
