@@ -42,10 +42,9 @@ public class AggiungiFileDaCondividere implements Servizio {
 	private void copiaFile(File orig, File dest) {
 
 		int letti = 0;
-		long tot = 0;
-		// inizializzo uno buffer di 4Kb
+
 		byte[] buffer = new byte[6022386];
-		// inizializzo stream per la copia del file
+
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
 		try {
@@ -54,7 +53,6 @@ public class AggiungiFileDaCondividere implements Servizio {
 			fos = new FileOutputStream(dest);
 			while ((letti = fis.read(buffer)) != -1) {
 				fos.write(buffer, 0, letti);
-				tot += letti;
 			}
 			fis.close();
 			fos.close();
@@ -64,5 +62,5 @@ public class AggiungiFileDaCondividere implements Servizio {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}	
+	}
 }

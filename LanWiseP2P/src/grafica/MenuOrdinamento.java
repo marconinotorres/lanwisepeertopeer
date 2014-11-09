@@ -25,14 +25,14 @@ public class MenuOrdinamento extends JMenu {
 
 	private JMenuItem nameFi = new JMenuItem("NomeFile");
 	private JMenuItem nameUt = new JMenuItem("NomeUtente");
-	private JMenuItem dimensione =  new JMenuItem("Dimensione");
+	private JMenuItem dimensione = new JMenuItem("Dimensione");
 
 	private MultimediaList multimedia;
 
 	private IOrdinamento nomeFile = new FiltraPerNomeFile();
 	private IOrdinamento nomeUtente = new FiltraPerNomeUtente();
 	private IOrdinamento dim = new FiltraPerDimensioneFile();
-	
+
 	public MenuOrdinamento() {
 		super("Ordina Per");
 
@@ -44,8 +44,9 @@ public class MenuOrdinamento extends JMenu {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				((ProxyOrdinamento) multimedia.getOrdinamento()).setFiltro(nomeFile); 
+
+				((ProxyOrdinamento) multimedia.getOrdinamento())
+						.setFiltro(nomeFile);
 			}
 		});
 
@@ -53,27 +54,30 @@ public class MenuOrdinamento extends JMenu {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				((ProxyOrdinamento) multimedia.getOrdinamento()).setFiltro(nomeUtente); 
+
+				((ProxyOrdinamento) multimedia.getOrdinamento())
+						.setFiltro(nomeUtente);
 			}
 		});
-		
+
 		dimensione.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				((ProxyOrdinamento) multimedia.getOrdinamento()).setFiltro(dim); 
-				
+				((ProxyOrdinamento) multimedia.getOrdinamento()).setFiltro(dim);
+
 			}
 		});
 	}
-	
+
 	public void setMultimedia(MultimediaList multimedia) {
 		this.multimedia = multimedia;
 	}
+
 	public IOrdinamento getNomeFile() {
 		return nomeFile;
 	}
+
 	public IOrdinamento getNomeUtente() {
 		return nomeUtente;
 	}

@@ -19,7 +19,7 @@ public class MultimediaList extends Observable implements Drawable {
 	private IMultimediaSettings settings;
 	private IMultimediaContents contents;
 	private IOrdinamento ordinamento;
-	
+
 	/**
 	 * Inizializza i:
 	 * 
@@ -31,7 +31,7 @@ public class MultimediaList extends Observable implements Drawable {
 	 * @param settings
 	 *            I {@link IMultimediaSettings} descrivendo come la lista dei
 	 *            contents si vuole disegnare.
-	 *            
+	 * 
 	 * @param ordinamento
 	 *            I {@link IOrdinamento} descrive l'ordine della lista
 	 */
@@ -46,17 +46,18 @@ public class MultimediaList extends Observable implements Drawable {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see multimedia.Drawable#draw(java.awt.Graphics)
 	 */
 	@Override
 	public void draw(Graphics graphics) {
 
-		ArrayList<FileHandler> contenuto = ordinamento.filtraListaFile(contents.getContentsList());
+		ArrayList<FileHandler> contenuto = ordinamento.filtraListaFile(contents
+				.getContentsList());
 		for (int i = 0; i < contenuto.size(); i++) {
 			int slot = i - index;
 			settings.applySlotSettings(graphics, slot);
-			placer.place(graphics, slot, contenuto.get(i)
-					.toString());
+			placer.place(graphics, slot, contenuto.get(i).toString());
 		}
 	}
 
@@ -76,7 +77,7 @@ public class MultimediaList extends Observable implements Drawable {
 	public IOrdinamento getOrdinamento() {
 		return ordinamento;
 	}
-	
+
 	public int getIndex() {
 		return index;
 	}
@@ -93,7 +94,6 @@ public class MultimediaList extends Observable implements Drawable {
 			index++;
 		update();
 	}
-
 
 	public void update() {
 		setChanged();

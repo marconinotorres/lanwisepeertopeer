@@ -2,8 +2,9 @@ package modello;
 
 /**
  * Una generica eccezione che pu˜ verificarsi
+ * 
  * @author Giuseppe Restivo
- *
+ * 
  */
 public class MessaggioEccezione extends Exception {
 

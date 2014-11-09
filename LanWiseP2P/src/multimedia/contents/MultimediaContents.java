@@ -45,6 +45,7 @@ public class MultimediaContents implements IMultimediaContents {
 				Utente utente = new Utente(nome, cogn);
 				String file = token.nextToken();
 				utente.setIp(token.nextToken());
+
 				contents.add(new FileHandler(file, dim, utente, path));
 				line = in.readLine();
 
@@ -84,16 +85,16 @@ public class MultimediaContents implements IMultimediaContents {
 	@Override
 	public void execute(int index) {
 
-		String nomeFile = contents.get(index).getPath();
+		String percorsoFile = contents.get(index).getPath();
 		String ip = contents.get(index).getUtente().getIp();
 
-		String nomeFileGiusto = contents.get(index).getNomeFile();
+		String nomeFile = contents.get(index).getNomeFile();
 
 		PeerAsClient pac = new PeerAsClient();
 
 		pac.setIP_SERVER(ip);
-		pac.setFILE_TO_RECEIVED(utente.getDownFolder() + "/" + nomeFileGiusto);
-		pac.setFILE_TO_REQUEST(nomeFile);
+		pac.setFILE_TO_RECEIVED(utente.getDownFolder() + "/" + nomeFile);
+		pac.setFILE_TO_REQUEST(percorsoFile);
 		pac.start();
 
 	}

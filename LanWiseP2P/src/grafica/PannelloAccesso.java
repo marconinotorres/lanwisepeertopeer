@@ -38,11 +38,12 @@ public class PannelloAccesso extends JPanel {
 		setBorder(border);
 		ButtonGroup gruppo = new ButtonGroup();
 
-		for (int i = 0; i < LetturaListaUtenti.getUtente().readFileUtente().size(); i++) {
-			String nome = LetturaListaUtenti.getUtente().readFileUtente().get(i)
-					.getNome();
-			String cognome = LetturaListaUtenti.getUtente().readFileUtente().get(i)
-					.getCognome();
+		for (int i = 0; i < LetturaListaUtenti.getUtente().readFileUtente()
+				.size(); i++) {
+			String nome = LetturaListaUtenti.getUtente().readFileUtente()
+					.get(i).getNome();
+			String cognome = LetturaListaUtenti.getUtente().readFileUtente()
+					.get(i).getCognome();
 			buttonUtenti.add(new JRadioButton(nome + "  " + cognome));
 			gruppo.add(buttonUtenti.get(i));
 			add(buttonUtenti.get(i));

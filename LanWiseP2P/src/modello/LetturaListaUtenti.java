@@ -14,9 +14,9 @@ public abstract class LetturaListaUtenti {
 		LetturaListaUtenti.utente = utente;
 	}
 
-	
 	/**
-	 * Effettua la lettura di tutti gli utenti, non è ancora noto la fonte da cui si avrà la lista
+	 * Effettua la lettura di tutti gli utenti, non è ancora noto la fonte da
+	 * cui si avrà la lista
 	 * 
 	 * @return la lista degli utenti che possono accedere all'applicazione
 	 */

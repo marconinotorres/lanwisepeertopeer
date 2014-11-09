@@ -3,9 +3,6 @@ package grafica;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 

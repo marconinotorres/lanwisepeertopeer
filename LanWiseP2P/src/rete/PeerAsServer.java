@@ -19,8 +19,7 @@ import modello.Utente;
  */
 public class PeerAsServer extends Thread {
 
-
-	public void run() { 
+	public void run() {
 		try {
 			accettaConnessione();
 		} catch (Exception e) {
@@ -40,14 +39,12 @@ public class PeerAsServer extends Thread {
 
 			sock = servsock.accept();
 
-			System.out.println("(PS) Accepting connection...");
-
 			BufferedReader socketReader = null;
 
 			socketReader = new BufferedReader(new InputStreamReader(
 					sock.getInputStream()));
 			nomeFile = socketReader.readLine();
-			System.out.println(nomeFile);
+
 			sock.close();
 			servsock.close();
 

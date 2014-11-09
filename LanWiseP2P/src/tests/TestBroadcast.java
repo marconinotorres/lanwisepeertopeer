@@ -11,24 +11,24 @@ import rete.BroadcastServer;
 public class TestBroadcast {
 
 	public static void main(String[] args) {
-		
-		
+
 		try {
 			Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		try {
-			BroadcastServer s = new BroadcastServer(new File("/home/rant/Scrivania/testD"));
+			BroadcastServer s = new BroadcastServer(new File(
+					"/home/rant/Scrivania/testD"));
 			s.start();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		BroadcastClient c = new BroadcastClient();
 		c.start();
-		
+
 	}
 
 }
