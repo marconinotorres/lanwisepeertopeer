@@ -52,7 +52,7 @@ public class BroadcastServer extends Thread {
 			listFilesForFolder(upFolder);
 
 			try {
-				in = new BufferedReader(new FileReader(INumberPort.FILEUTENTE));
+				in = new BufferedReader(new FileReader(INomiFile.FILEUTENTE));
 			} catch (FileNotFoundException e) {
 				System.err.println("Could not open file.");
 			}
@@ -65,7 +65,7 @@ public class BroadcastServer extends Thread {
 					buf = dString.getBytes();
 
 					InetAddress group = InetAddress
-							.getByName(INumberPort.NOMEPORTABROADCAST);
+							.getByName(INomePort.NOMEPORTABROADCAST);
 					DatagramPacket packet = new DatagramPacket(buf, buf.length,
 							group, 4446);
 					socket.send(packet);
@@ -102,7 +102,7 @@ public class BroadcastServer extends Thread {
 	private void listFilesForFolder(final File folder) {
 
 		try {
-			Files.deleteIfExists(Paths.get(INumberPort.FILEUTENTE));
+			Files.deleteIfExists(Paths.get(INomiFile.FILEUTENTE));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -110,7 +110,7 @@ public class BroadcastServer extends Thread {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(new BufferedWriter(new FileWriter(
-					INumberPort.FILEUTENTE, true)));
+					INomiFile.FILEUTENTE, true)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

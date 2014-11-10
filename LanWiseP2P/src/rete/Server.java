@@ -43,7 +43,7 @@ public class Server extends Thread {
 		ServerSocket servsock = null;
 		Socket sock = null;
 
-		servsock = new ServerSocket(INumberPort.SOCKET_PORT_CLIENT_SERVER);
+		servsock = new ServerSocket(INomePort.SOCKET_PORT_CLIENT_SERVER);
 
 		sock = servsock.accept();
 
