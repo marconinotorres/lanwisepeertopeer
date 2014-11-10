@@ -23,7 +23,7 @@ import multimedia.contents.MultimediaContents;
 import multimedia.placers.ProxyPlacer;
 import multimedia.settings.MultimediaSettings;
 import ordinamento.ProxyOrdinamento;
-import rete.INumberPort;
+import rete.INomePort;
 import rete.ListSignal;
 
 /**
