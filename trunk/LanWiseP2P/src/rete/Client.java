@@ -42,7 +42,7 @@ public class Client extends Thread {
 		BufferedOutputStream bos = null;
 		Socket sock = null;
 
-		sock = new Socket(IP_SERVER, INumberPort.SOCKET_PORT_CLIENT_SERVER);
+		sock = new Socket(IP_SERVER, INomePort.SOCKET_PORT_CLIENT_SERVER);
 
 		byte[] mybytearray = new byte[FILE_SIZE];
 		InputStream is = sock.getInputStream();

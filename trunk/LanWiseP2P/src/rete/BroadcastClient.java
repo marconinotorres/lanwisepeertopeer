@@ -40,18 +40,18 @@ public class BroadcastClient extends Thread {
 
 			signal.setHasDataToProcess(true);
 			try {
-				Files.deleteIfExists(Paths.get(INumberPort.FILECONDIVISO));
+				Files.deleteIfExists(Paths.get(INomiFile.FILECONDIVISO));
 				
 				MulticastSocket socket = new MulticastSocket(4446);
 				InetAddress address = InetAddress
-						.getByName(INumberPort.NOMEPORTABROADCAST);
+						.getByName(INomePort.NOMEPORTABROADCAST);
 				socket.joinGroup(address);
 				socket.setReceiveBufferSize(65536);
 
 				DatagramPacket packet;
 
 				PrintWriter out = new PrintWriter(new BufferedWriter(
-						new FileWriter(INumberPort.FILECONDIVISO, true)));
+						new FileWriter(INomiFile.FILECONDIVISO, true)));
 
 				while (true) {
 
@@ -68,7 +68,7 @@ public class BroadcastClient extends Thread {
 					}
 
 					Scanner scanner = new Scanner(new BufferedReader(
-							new FileReader(INumberPort.FILECONDIVISO)));
+							new FileReader(INomiFile.FILECONDIVISO)));
 
 					boolean found = false;
 					while (scanner.hasNextLine()) {

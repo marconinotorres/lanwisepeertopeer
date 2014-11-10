@@ -33,7 +33,7 @@ public class PeerAsServer extends Thread {
 			ServerSocket servsock = null;
 			Socket sock = null;
 
-			servsock = new ServerSocket(INumberPort.SOCKET_PORT_PEER);
+			servsock = new ServerSocket(INomePort.SOCKET_PORT_PEER);
 
 			sock = servsock.accept();
 

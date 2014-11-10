@@ -36,7 +36,7 @@ public class PeerAsClient extends Thread {
 		Socket sock = null;
 
 		try {
-			sock = new Socket(IP_SERVER, INumberPort.SOCKET_PORT_PEER);
+			sock = new Socket(IP_SERVER, INomePort.SOCKET_PORT_PEER);
 
 			osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
 			osw.write(FILE_TO_REQUEST, 0, FILE_TO_REQUEST.length());
