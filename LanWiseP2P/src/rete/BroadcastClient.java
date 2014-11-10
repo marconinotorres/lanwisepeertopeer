@@ -31,6 +31,7 @@ import java.util.Scanner;
  */
 public class BroadcastClient extends Thread {
 
+	
 	public void run() {
 
 		ListSignal signal = ListSignal.getInstance();
@@ -39,7 +40,8 @@ public class BroadcastClient extends Thread {
 
 			signal.setHasDataToProcess(true);
 			try {
-				Files.deleteIfExists(Paths.get("OtherFilesList.txt"));
+				Files.deleteIfExists(Paths.get(INumberPort.FILECONDIVISO));
+				
 				MulticastSocket socket = new MulticastSocket(4446);
 				InetAddress address = InetAddress
 						.getByName(INumberPort.NOMEPORTABROADCAST);
@@ -49,7 +51,7 @@ public class BroadcastClient extends Thread {
 				DatagramPacket packet;
 
 				PrintWriter out = new PrintWriter(new BufferedWriter(
-						new FileWriter("OtherFilesList.txt", true)));
+						new FileWriter(INumberPort.FILECONDIVISO, true)));
 
 				while (true) {
 
@@ -66,7 +68,7 @@ public class BroadcastClient extends Thread {
 					}
 
 					Scanner scanner = new Scanner(new BufferedReader(
-							new FileReader("OtherFilesList.txt")));
+							new FileReader(INumberPort.FILECONDIVISO)));
 
 					boolean found = false;
 					while (scanner.hasNextLine()) {

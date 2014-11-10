@@ -1,7 +1,9 @@
 package rete;
 
 /**
- * Specifica il numero di porte usate dai socket
+ * Specifica il numero di porte usate dai socket e i file da cui BroadcastClient e BroadcastServer andranno a leggere per
+ * 
+ * compiere i loro lavori
  * 
  * @author Giuseppe Restivo
  * 
@@ -22,5 +24,16 @@ public class INumberPort {
 	 * Nome host usato in BroadcastServer e BroadcastClient
 	 */
 	public static final String NOMEPORTABROADCAST = "230.0.0.1";
+	
+	/**
+	 * Nome del file che viene condiviso tra gli utenti e che contiene 
+	 */
+	public static final String FILECONDIVISO = "data/OtherFilesList.txt";
+	
+	/**
+	 * Nome del file che contiene tutti i file di un singolo utente e che verrˆ condiviso con gli altri
+	 */
+	public static final String FILEUTENTE = "data/MyFilesList.txt";
+	
 
 }

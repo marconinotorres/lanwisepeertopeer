@@ -52,7 +52,7 @@ public class BroadcastServer extends Thread {
 			listFilesForFolder(upFolder);
 
 			try {
-				in = new BufferedReader(new FileReader("MyFilesList.txt"));
+				in = new BufferedReader(new FileReader(INumberPort.FILEUTENTE));
 			} catch (FileNotFoundException e) {
 				System.err.println("Could not open file.");
 			}
@@ -102,7 +102,7 @@ public class BroadcastServer extends Thread {
 	private void listFilesForFolder(final File folder) {
 
 		try {
-			Files.deleteIfExists(Paths.get("MyFilesList.txt"));
+			Files.deleteIfExists(Paths.get(INumberPort.FILEUTENTE));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -110,7 +110,7 @@ public class BroadcastServer extends Thread {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(new BufferedWriter(new FileWriter(
-					"MyFilesList.txt", true)));
+					INumberPort.FILEUTENTE, true)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
