@@ -1,7 +1,7 @@
 package modello;
 
 /**
- * Un generico file presente nella Lista
+ * Modello di un generico file presente nella Lista
  * 
  * @author Giuseppe Restivo
  * 

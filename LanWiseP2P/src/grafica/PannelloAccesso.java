@@ -19,7 +19,7 @@ import modello.Utente;
 import modello.UtenteSelected;
 
 /**
- * Permette di identificare l'utente che si vuole connettere
+ * Pannello che permette di identificare l'utente che si vuole connettere
  * 
  * @author giusepperestivo
  * 

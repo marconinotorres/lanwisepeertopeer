@@ -12,7 +12,7 @@ import modello.service.ProxyServizio;
 import modello.service.RimuoviFileCondiviso;
 
 /**
- * Menu grafico dove è possibile scegliere un servizio, come ad esempio
+ * Menu grafico dove ÔøΩ possibile scegliere un servizio, ad esempio
  * aggiungere un nuovo file alla cartella condivisa o rimuoverla
  * 
  * @author giusepperestivo

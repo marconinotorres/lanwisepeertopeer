@@ -5,11 +5,6 @@ import java.awt.Graphics;
 
 import multimedia.IMultimediaSettings;
 
-/**
- * 
- * @author Giuseppe Restivo
- * 
- */
 public class MultimediaSettings implements IMultimediaSettings {
 
 	private Color focusColor = Color.RED;

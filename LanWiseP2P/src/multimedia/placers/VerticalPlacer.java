@@ -4,10 +4,6 @@ import java.awt.Graphics;
 
 import multimedia.IPlacer;
 
-/**
- * @author Giuseppe Restivo
- */
-
 public class VerticalPlacer implements IPlacer {
 
 	private static int X_FOCUS = 50;

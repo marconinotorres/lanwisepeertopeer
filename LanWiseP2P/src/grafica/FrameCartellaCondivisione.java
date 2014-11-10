@@ -18,7 +18,7 @@ import rete.BroadcastServer;
 import modello.CartelleUtente;
 
 /**
- * Permette di selezionare la cartella da condividere
+ * Permette di selezionare la cartella da condividere all'avvio del programma
  * 
  * @author Giuseppe Restivo
  * 

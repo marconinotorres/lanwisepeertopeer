@@ -13,10 +13,6 @@ import modello.Utente;
 import multimedia.IMultimediaContents;
 import rete.PeerAsClient;
 
-/**
- * @author Giuseppe Restivo
- * 
- */
 public class MultimediaContents implements IMultimediaContents {
 
 	private CartelleUtente utente = CartelleUtente.getInstance();

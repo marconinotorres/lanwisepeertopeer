@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 import modello.UtenteSelected;
 
 /**
- * Invia in broadcast la lista dei propri file ossia il file 'MyListFile.txt',
+ * Invia in broadcast la lista dei propri file, ovvero il file 'MyListFile.txt',
  * che poi verrˆ letto dal {@link BroadcastClient} per generare la lista
  * completa di tutti i file di tutti gli utenti.
  * 

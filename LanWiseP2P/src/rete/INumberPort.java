@@ -1,9 +1,8 @@
 package rete;
 
 /**
- * Specifica il numero di porte usate dai socket e i file da cui BroadcastClient e BroadcastServer andranno a leggere per
- * 
- * compiere i loro lavori
+ * Specifica il numero di porte usate dai socket e i nomi dei file da cui BroadcastClient e BroadcastServer andranno a leggere per
+ * adempiere ai propri compiti
  * 
  * @author Giuseppe Restivo
  * 
