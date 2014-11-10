@@ -23,6 +23,7 @@ import multimedia.contents.MultimediaContents;
 import multimedia.placers.ProxyPlacer;
 import multimedia.settings.MultimediaSettings;
 import ordinamento.ProxyOrdinamento;
+import rete.INumberPort;
 import rete.ListSignal;
 
 /**
@@ -77,7 +78,7 @@ public class FrameCondivisione extends JFrame {
 				while (signal.hasDataToProcess()) {
 				}
 				contents.getContentsList().clear();
-				contents.addContents("OtherFilesList.txt");
+				contents.addContents("data/OtherFilesList.txt");
 				panel2.repaint();
 			}
 		});
