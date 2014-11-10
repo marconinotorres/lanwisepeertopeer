@@ -8,11 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
-import modello.MessaggioEccezione;
 
 /**
- * Se si genera una eccezione si pu˜ usare questa classe che estende un JDialog
- * dove viene stampato il tipo di eccezione generato
+ * Classe che estende un JDialog dove verrà stampato il tipo di eccezione generato
+ * nel caso in cui venga generata un'eccezione
  * 
  * @author giusepperestivo
  * 

@@ -1,11 +1,11 @@
 package modello;
 
 /**
+ * Imposta l'utente che si ï¿½ collegato all'applicazione
  * Viene utilizzato il Pattern Singleton
+ * perchï¿½ una volta che un utente si ï¿½ 'loggato' non puËœ piï¿½ cambiare.
  * 
- * perch una volta che un utente si  'loggato' non pu˜ pi cambiare.
- * 
- * Imposta l'utente che si  collegato all'applicazione
+
  * 
  * @author giusepperestivo
  * 
@@ -33,7 +33,7 @@ public abstract class UtenteSelected {
 	}
 
 	/**
-	 * Scrive sul file che l'utente selezionato si  collegato o scollegato,
+	 * Scrive sul file che l'utente selezionato si ï¿½ collegato o scollegato,
 	 * allora imposta gli indici S (collegato) ed N (scollegato)
 	 * 
 	 * @param utenteCollegato

@@ -4,10 +4,6 @@ import java.awt.Graphics;
 
 import multimedia.IPlacer;
 
-/**
- * @author Giuseppe Restivo
- * 
- */
 public class ProxyPlacer implements IPlacer {
 
 	private IPlacer placer;

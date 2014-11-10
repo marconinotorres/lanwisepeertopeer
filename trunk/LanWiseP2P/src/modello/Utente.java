@@ -1,7 +1,7 @@
 package modello;
 
 /**
- * Generico Utente
+ * Modello di un generico Utente
  * 
  * @author giusepperestivo
  * 
