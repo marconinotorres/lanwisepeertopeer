@@ -53,7 +53,6 @@ public class MultimediaContents implements IMultimediaContents {
 				StringTokenizer tok = new StringTokenizer(file,".");
 				tok.nextToken();
 				String estensione = tok.nextToken();
-				
 				String nomeIcona=null;
 				
 				for (int i = 0; i < listaIcona.size(); i++) {

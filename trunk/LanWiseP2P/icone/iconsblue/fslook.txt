@@ -2,3 +2,10 @@ wav:Music.png
 mp3:Music.png
 jpg:Photos01.png
 png:Photos01.png
+txt:Text.png
+java:Text.png
+mp4:Video.png
+mpeg:Video.png
+pdf:Photos01.png
+png:Photos01.png
+flv:Video.png

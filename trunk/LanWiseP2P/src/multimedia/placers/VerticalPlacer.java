@@ -23,13 +23,14 @@ public class VerticalPlacer implements IPlacer{
 	
 	private static int iconCenterX = 50;
 	private static int iconCenterY = 200;
-	private static int DISTANZA_CONTENUTI=50;
+	
+	private static int DISTANZA_CONTENUTI=75;
 	
 	
 	public void place(Graphics graphics, int slot,int index, IMultimediaContents contents) {
 		
 		Graphics2D graphics2d = (Graphics2D)graphics;
-		//FileHandler contenuto = new FileHandler();
+		
 		String nomeFile = contents.getContentsList().get(index).getNomeFile();
 		int dimension = contents.getContentsList().get(index).getDimension();
 		Utente utente = contents.getContentsList().get(index).getUtente();
@@ -39,8 +40,6 @@ public class VerticalPlacer implements IPlacer{
 		FormattazioneFileHandler formato = new FormattazioneFileHandler(nomeFile, dimension, utente, path, icona);
 		
 		try {
-			
-			//contenuto = contents.getContentsList().get(index);
 			BufferedImage image = ImageIO.read(new File(formato.getIcona()));
 			
 			int halfWidth= (image.getWidth())>>1;
