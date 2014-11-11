@@ -12,6 +12,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import modello.LetturaListaUtenti;
 import modello.UtenteSelected;
 import modello.letturaListaUtenti.TestReadUtenti;
+import modello.readIcone.LetturaFileIcone;
+import modello.readIcone.TestLetturaIcone;
 import modello.writeUtenteSelezionato.TestWriteConnessione;
 
 public class Main {
@@ -43,7 +45,9 @@ public class Main {
 
 		LetturaListaUtenti.setUtente(new TestReadUtenti());
 		UtenteSelected.setUtente(new TestWriteConnessione());
-
+		LetturaFileIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone("icone/iconspurple/fslook.txt"));
+		LetturaFileIcone.getLetturaIcone().setPath("icone/iconspurple/");
+		
 		PannelloAccesso p = new PannelloAccesso();
 
 		frame.getContentPane().add(p);
