@@ -42,7 +42,7 @@ public class MultimediaContents implements IMultimediaContents {
 				String file = token.nextToken();
 				utente.setIp(token.nextToken());
 
-				contents.add(new FileHandler(file, dim, utente, path));
+				contents.add(new FileHandler(file, dim, utente, path,null));
 				line = in.readLine();
 
 			}
