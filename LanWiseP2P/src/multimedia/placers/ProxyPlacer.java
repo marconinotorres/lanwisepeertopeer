@@ -2,6 +2,7 @@ package multimedia.placers;
 
 import java.awt.Graphics;
 
+import multimedia.IMultimediaContents;
 import multimedia.IPlacer;
 
 public class ProxyPlacer implements IPlacer {
@@ -12,13 +13,18 @@ public class ProxyPlacer implements IPlacer {
 		super();
 		this.placer = placer;
 	}
-
-	@Override
-	public void place(Graphics graphics, int slot, String content) {
-		placer.place(graphics, slot, content);
-	}
-
 	public void setPlacer(IPlacer placer) {
 		this.placer = placer;
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see multimedia.IPlacer#place(java.awt.Graphics, int, int, multimedia.IMultimediaContents)
+	 */
+	@Override
+	public void place(Graphics graphics, int slot, int index,
+			IMultimediaContents contents) {
+		placer.place(graphics, slot, index, contents);
+	}
+
 }

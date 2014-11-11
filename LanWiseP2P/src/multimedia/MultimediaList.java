@@ -57,7 +57,7 @@ public class MultimediaList extends Observable implements Drawable {
 		for (int i = 0; i < contenuto.size(); i++) {
 			int slot = i - index;
 			settings.applySlotSettings(graphics, slot);
-			placer.place(graphics, slot, contenuto.get(i).toString());
+			placer.place(graphics, slot,i ,contents);
 		}
 	}
 
