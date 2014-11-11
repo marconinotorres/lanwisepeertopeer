@@ -1,0 +1,9 @@
+wav:Music.png
+mp3:Music.png
+jpg:Photos.png
+png:Photos.png
+txt:Text.png
+java:Text.png
+mpeg:Video.png
+pdf:Photos.png
+flv:Video.png
