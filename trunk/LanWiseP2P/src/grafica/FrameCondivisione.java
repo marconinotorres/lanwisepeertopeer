@@ -1,5 +1,6 @@
 package grafica;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -49,6 +50,7 @@ public class FrameCondivisione extends JFrame {
 	private JMenuBar menubar = new JMenuBar();
 	private MenuOrdinamento ordinamentoMenu = new MenuOrdinamento();
 	private MenuServizi serviziMenu = new MenuServizi();
+	private MenuSetIcone setIcone = new MenuSetIcone();
 
 	public FrameCondivisione() {
 
@@ -95,15 +97,18 @@ public class FrameCondivisione extends JFrame {
 
 		menubar.add(serviziMenu);
 		menubar.add(ordinamentoMenu);
-
+		menubar.add(setIcone);
+		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 		setBounds((int) screenSize.getWidth() >> 2,
 				(int) screenSize.getHeight() >> 3,
-				(int) screenSize.getWidth() >> 1,
-				(int) screenSize.getHeight() >> 1);
+				(int) screenSize.getWidth() << 2,
+				(int) screenSize.getHeight() << 1);
+
 
 		setJMenuBar(menubar);
+		setBackground(Color.gray);
 		setTitle("LWP2P");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		add(panel2);

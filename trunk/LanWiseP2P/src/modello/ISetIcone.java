@@ -1,8 +1,6 @@
-package modello.readIcone;
+package modello;
 
 import java.util.List;
-
-import modello.Icona;
 
 /**
  * Un set di icone corrisponde alla possibilità di avere più cartelle contenenti icone.
