@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 
 import modello.FileHandler;
 import modello.FormattazioneFileHandler;
+import modello.Utente;
 import multimedia.IMultimediaContents;
 import multimedia.IPlacer;
 
@@ -28,25 +29,31 @@ public class VerticalPlacer implements IPlacer{
 	public void place(Graphics graphics, int slot,int index, IMultimediaContents contents) {
 		
 		Graphics2D graphics2d = (Graphics2D)graphics;
-		FileHandler contenuto = new FileHandler();
-		FormattazioneFileHandler formato = new FormattazioneFileHandler(30);
+		//FileHandler contenuto = new FileHandler();
+		String nomeFile = contents.getContentsList().get(index).getNomeFile();
+		int dimension = contents.getContentsList().get(index).getDimension();
+		Utente utente = contents.getContentsList().get(index).getUtente();
+		String path = contents.getContentsList().get(index).getPath();
+		String icona = contents.getContentsList().get(index).getIcona();
+		
+		FormattazioneFileHandler formato = new FormattazioneFileHandler(nomeFile, dimension, utente, path, icona);
 		
 		try {
 			
-			contenuto = contents.getContentsList().get(index);
-			BufferedImage image = ImageIO.read(new File(contents.getContentsList().get(index).getIcona()));
+			//contenuto = contents.getContentsList().get(index);
+			BufferedImage image = ImageIO.read(new File(formato.getIcona()));
 			
 			int halfWidth= (image.getWidth())>>1;
 			int halfHeight=image.getHeight()>>1;
 			
 			graphics2d.drawImage(image,iconCenterX-halfWidth,(iconCenterY-halfHeight)+slot*DISTANZA_CONTENUTI, null,null);
 			
-			String name = formato.setNCaratteri(contenuto.getNomeFile());
-			String dim = formato.numeroDecimali(contenuto.getDimension());
+			String name = formato.setNCaratteri(nomeFile);
+			String dim = formato.numeroDecimali(formato.getDimension());
 			
 			graphics2d.drawString(name,iconCenterX+100,iconCenterY+slot*DISTANZA_CONTENUTI);
 			graphics2d.drawString(dim,iconCenterX+500,iconCenterY+slot*DISTANZA_CONTENUTI);
-			graphics2d.drawString(contenuto.getUtente().getCognome(),iconCenterX+650,iconCenterY+slot*DISTANZA_CONTENUTI);
+			graphics2d.drawString(formato.getUtente().getCognome(),iconCenterX+650,iconCenterY+slot*DISTANZA_CONTENUTI);
 			
 			
 		} catch (IOException e) {

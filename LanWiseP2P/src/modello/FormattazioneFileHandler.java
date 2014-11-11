@@ -1,14 +1,27 @@
 package modello;
 
-public class FormattazioneFileHandler {
+/**
+ * Imposta tutti i setting grafici: come Impostare la lunghezza massima di caratteri da visualizzare
+ * 
+ * @author Giuseppe Restivo
+ *
+ */
+public class FormattazioneFileHandler extends FileHandler {
 
-	private int numeroMAXCARATTERI = 30;
+	private static final int numeroMAXCARATTERI = 50;
+
 	
-	public FormattazioneFileHandler(int numeroMAXCARATTERI) {
-		super();
-		this.numeroMAXCARATTERI = numeroMAXCARATTERI;
+	public FormattazioneFileHandler(String nomeFile, int dimension,
+			Utente utente, String path, String icona) {
+		super(nomeFile, dimension, utente, path, icona);
+
 	}
 
+	/**
+	 * Imposta in numero massimo di caratteri da visualizzare
+	 * @param word da modificare
+	 * @return
+	 */
 	public String setNCaratteri(String word){
 		if (word.length() > numeroMAXCARATTERI) {
 			return word.substring(0, numeroMAXCARATTERI-1)+"...";
@@ -16,6 +29,12 @@ public class FormattazioneFileHandler {
 		return word;
 	}
 	
+	/**
+	 * TODO da modificare
+	 * 
+	 * @param dimensione
+	 * @return
+	 */
 	public String numeroDecimali(int dimensione){
 		
 		String dim = String.valueOf(dimensione);
