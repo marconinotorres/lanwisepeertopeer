@@ -1,0 +1,4 @@
+wav:Music.png
+mp3:Music.png
+jpg:Photos01.png
+png:Photos01.png
