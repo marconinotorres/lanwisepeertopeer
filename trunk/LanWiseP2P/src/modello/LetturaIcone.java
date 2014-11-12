@@ -36,15 +36,15 @@ public class LetturaIcone {
 	public void setNomeDirectory(String nomeDirectory) {
 		this.pathDirectory = nomeDirectory;
 	}
-	
+
 	public String getNomeDirectory() {
 		return pathDirectory;
 	}
 	
 	/**
-	 * Legge dentro la directory 'icone' tutti i set di icone disponibili
+	 * Legge dentro la directory 'icone' tutti i set di icone disponibili.
 	 * 
-	 * Tutti i set di icone,quindi, verranno aggiunte automaticamente alla lista dei set disponibili
+	 * Tutti i set di icone, quindi, verranno aggiunte automaticamente alla lista dei set disponibili
 	 * 
 	 * @return i nomi delle directory che contengono tutti i set di icone disponibili.
 	 */
@@ -61,6 +61,11 @@ public class LetturaIcone {
 		return listaDirectoryIcone.toArray(new String[listaDirectoryIcone.size()]);
 	}
 	
+	/**
+	 * Imposta ad un file la sua relativa icona
+	 * @param estensione del fila
+	 * @return il nome dell'icona associato (è compreso tutta la directory dell'icona)
+	 */
 	public String impostaIcona(String estensione) {
 		String nomeIcona = null;
 		for (int i = 0; i < listaIcone.size(); i++) {

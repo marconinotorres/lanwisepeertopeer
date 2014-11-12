@@ -11,7 +11,8 @@ import modello.FileHandler;
  */
 public interface IMultimediaContents {
 
-	public void addContents(String nomeFile);
+	
+	public void readContentsFile();
 
 	/**
 	 * @return la lista di file

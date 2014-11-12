@@ -5,8 +5,11 @@ import java.util.List;
 
 public class LetturaListaUtenti {
 
+	//as Singleton
 	private static LetturaListaUtenti utente = new LetturaListaUtenti();
-
+	private LetturaListaUtenti() {
+		// TODO Auto-generated constructor stub
+	}
 	public static LetturaListaUtenti getUtente() {
 		return utente;
 	}
@@ -21,12 +24,4 @@ public class LetturaListaUtenti {
 	public List<Utente> getUtenti() {
 		return utenti;
 	}
-	
-	/**
-	 * Effettua la lettura di tutti gli utenti, non è ancora noto la fonte da
-	 * cui si avrà la lista
-	 * 
-	 * @return la lista degli utenti che possono accedere all'applicazione
-	 */
-	//public abstract List<Utente> readFileUtente(List<Utente> utente);
 }

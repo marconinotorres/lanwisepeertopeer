@@ -23,6 +23,13 @@ public class FileHandler {
 		this.path = path;
 		this.icona = icona;
 	}
+	public FileHandler(String nomeFile, int dimension, Utente utente,String path) {
+		super();
+		this.nomeFile = nomeFile;
+		this.dimension = dimension;
+		this.utente = utente;
+		this.path = path;
+	}
 	
 	public FileHandler() {
 		
