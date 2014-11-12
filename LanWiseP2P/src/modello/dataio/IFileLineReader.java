@@ -1,12 +1,12 @@
 package modello.dataio;
 
 /**
- * @author Alessandro Martinelli
+ * @author Giuseppe Restivo
  */
 public interface IFileLineReader {
 
 	/**
-	 * Read a Line of a file
+	 * Legge una riga di un file
 	 * @param line
 	 */
 	public void readLine(String line);

@@ -80,7 +80,7 @@ public class FrameCondivisione extends JFrame {
 				while (signal.hasDataToProcess()) {
 				}
 				contents.getContentsList().clear();
-				contents.addContents("data/OtherFilesList.txt");
+				contents.readContentsFile();
 				panel2.repaint();
 			}
 		});
