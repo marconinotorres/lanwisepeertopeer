@@ -12,6 +12,7 @@ package modello;
  */
 public abstract class UtenteSelected {
 
+	//as Singleton keeper 
 	private static UtenteSelected utenteSelected;
 
 	public static UtenteSelected getUtente() {
@@ -22,6 +23,7 @@ public abstract class UtenteSelected {
 		UtenteSelected.utenteSelected = utente;
 	}
 
+	//as Class
 	private Utente utenteCollegato;
 
 	public Utente getUtenteCollegato() {
@@ -33,7 +35,7 @@ public abstract class UtenteSelected {
 	}
 
 	/**
-	 * Scrive sul file che l'utente selezionato si � collegato o scollegato,
+	 * Scrive sul file l'utente che si è collegato o scollegato,
 	 * allora imposta gli indici S (collegato) ed N (scollegato)
 	 * 
 	 * @param utenteCollegato
