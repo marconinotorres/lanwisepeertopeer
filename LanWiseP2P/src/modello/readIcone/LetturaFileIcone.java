@@ -38,12 +38,16 @@ public class LetturaFileIcone {
 	}
 	
 	/**
-	 * Tutti i set di icone verranno aggiunte automaticamente alla lista dei set disponibili
+	 * Legge dentro la directory 'icone' tutti i set di icone disponibili
+	 * 
+	 * Tutti i set di icone,quindi, verranno aggiunte automaticamente alla lista dei set disponibili
+	 * 
 	 * @return i nomi di tutti i set di icone disponibili dell'applicazione
 	 */
 	public String[] setIcone(){
 		List<String> listaIcone = new ArrayList<String>();
 		File file = new File("icone");
+		
 		File[] lista = file.listFiles();
 		for (int i = 0; i < lista.length; i++) {
 			if (lista[i].isDirectory()) {
