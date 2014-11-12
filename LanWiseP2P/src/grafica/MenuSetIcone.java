@@ -7,6 +7,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import modello.LetturaIcone;
+import modello.dataio.StringLinesReader;
 import modello.readIcone.TestLetturaIcone;
 
 /**
@@ -24,7 +25,7 @@ public class MenuSetIcone extends JMenu {
 	public MenuSetIcone() {
 		super("setIcone");
 		
-		String[] nameDirectoryIcone = LetturaIcone.getLetturaIcone().getSetIcone().readDirectoryIcone();
+		String[] nameDirectoryIcone = LetturaIcone.getLetturaIcone().readDirectoryIcone();
 		
 		item = new JMenuItem[nameDirectoryIcone.length];
 		
@@ -34,14 +35,16 @@ public class MenuSetIcone extends JMenu {
 			add(item[i]);
 			
 			final String name = nameDirectoryIcone[i];
+			
 			item[i].addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					String path = "icone/"+name+"/";
 					
-					LetturaIcone.getLetturaIcone().setPath(path);
-					LetturaIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone(path));
+					LetturaIcone.getLetturaIcone().setNomeDirectory(path);
+					(new StringLinesReader(new TestLetturaIcone())).readFile(path+"fslook.txt");
+					
 				}
 			});
 		}

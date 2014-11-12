@@ -1,6 +1,7 @@
 package modello;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Modello di una icona: estensione e nome del file associato
@@ -10,7 +11,7 @@ import java.util.HashMap;
 public class Icona {
 
 	private HashMap<String, String> icona = new HashMap<String, String>();
-	
+
 	/**
 	 * Aggiunge un'icona
 	 * @param estensione

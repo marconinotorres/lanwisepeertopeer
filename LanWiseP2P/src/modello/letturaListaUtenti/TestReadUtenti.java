@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 
 import modello.LetturaListaUtenti;
 import modello.Utente;
+import modello.dataio.IFileLineReader;
 
 /**
  * N -> non è connesso S -> è connesso
@@ -21,47 +22,20 @@ import modello.Utente;
  * @author Giuseppe Restivo
  * 
  */
-public class TestReadUtenti extends LetturaListaUtenti {
+public class TestReadUtenti implements IFileLineReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see modello.readUtenti.UtenteReader#readFileUtente()
+	 * @see modello.dataio.IFileLineReader#readLine(java.lang.String)
 	 */
 	@Override
-	public List<Utente> readFileUtente() {
-
-		List<Utente> lista = new ArrayList<Utente>();
-
-		File file = new File("data/listaUtenti.txt");
-
-		try {
-
-			BufferedReader reader = new BufferedReader(new FileReader(file));
-			String line = reader.readLine();
-			while (line != null) {
-
-				StringTokenizer token = new StringTokenizer(line);
-				String nome = token.nextToken();
-				String cognome = token.nextToken();
-				String conn = token.nextToken();
-
-				if (conn.equals("N")) {
-					lista.add(new Utente(nome, cognome));
-				}
-
-				line = reader.readLine();
-			}
-			reader.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return lista;
-
+	public void readLine(String line) {
+		
+		String[] parts = line.split(" ");
+		
+		if (parts[2].equals("N")) {
+			LetturaListaUtenti.getUtente().addUtente(new Utente(parts[0], parts[1]));
+		}	
+		
 	}
 }

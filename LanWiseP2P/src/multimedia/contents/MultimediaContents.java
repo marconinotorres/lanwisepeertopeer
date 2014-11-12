@@ -36,8 +36,6 @@ public class MultimediaContents implements IMultimediaContents {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(nomeFile));
 			String line = in.readLine();
-			List<Icona> listaIcona = new ArrayList<Icona>();
-			listaIcona = LetturaIcone.getLetturaIcone().getSetIcone().leggiFile();
 			
 			while (line!= null) {
 				
@@ -53,18 +51,9 @@ public class MultimediaContents implements IMultimediaContents {
 				StringTokenizer tok = new StringTokenizer(file,".");
 				tok.nextToken();
 				String estensione = tok.nextToken();
-				String nomeIcona=null;
+				String nomeIconaAssociato = LetturaIcone.getLetturaIcone().impostaIcona(estensione);
 				
-				for (int i = 0; i < listaIcona.size(); i++) {
-					if (listaIcona.get(i).isContains(estensione)) {
-						nomeIcona = LetturaIcone.getLetturaIcone().getPath()+listaIcona.get(i).getNomeIcona(estensione);
-					}
-				}
-				if (nomeIcona == null) {
-					nomeIcona = LetturaIcone.getLetturaIcone().getPath()+"sconosciuto.png";
-				}
-				
-				contents.add(new FileHandler(file, dim, utente,path,nomeIcona));
+				contents.add(new FileHandler(file, dim, utente,path,nomeIconaAssociato));
 				line = in.readLine();
 							
 			} 
@@ -75,7 +64,25 @@ public class MultimediaContents implements IMultimediaContents {
 		}
 		
 	}
-	
+
+
+//	private String impostaIcona(String estensione,
+//			String nomeIcona) {
+//		
+//		List<Icona> listaIcona = LetturaIcone.getLetturaIcone().getListaIcone();
+//		
+//		for (int i = 0; i < listaIcona.size(); i++) {
+//			if (listaIcona.get(i).isContains(estensione)) {
+//				nomeIcona = LetturaIcone.getLetturaIcone().getNomeDirectory()+
+//						listaIcona.get(i).getNomeIcona(estensione);
+//			}
+//		}
+//		if (nomeIcona == null) {
+//			nomeIcona = LetturaIcone.getLetturaIcone().getNomeDirectory()+"sconosciuto.png";
+//		}
+//		return nomeIcona;
+//	}
+//	
 
 	/*
 	 * (non-Javadoc)
