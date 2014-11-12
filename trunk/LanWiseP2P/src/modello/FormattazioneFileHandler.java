@@ -9,8 +9,6 @@ package modello;
 public class FormattazioneFileHandler extends FileHandler {
 
 	private static final int numeroMAXCARATTERI = 50;
-
-	
 	
 
 	public FormattazioneFileHandler(String nomeFile, int dimension,

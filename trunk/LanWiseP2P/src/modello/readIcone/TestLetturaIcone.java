@@ -23,6 +23,7 @@ public class TestLetturaIcone implements ISetIcone{
 		file = new File(path);
 	}
 
+	
 	/*
 	 * (non-Javadoc)
 	 * @see modello.readIcone.ISetIcone#leggiFile()
@@ -32,7 +33,7 @@ public class TestLetturaIcone implements ISetIcone{
 		
 		lista.clear();	
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			BufferedReader reader = new BufferedReader(new FileReader(file+"/fslook.txt"));
 			String line = reader.readLine();
 			
 			while (line !=null) {
@@ -56,5 +57,22 @@ public class TestLetturaIcone implements ISetIcone{
 		}
 		
 		return lista;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see modello.ISetIcone#setIcone()
+	 */
+	public String[] readDirectoryIcone(){
+		List<String> listaIcone = new ArrayList<String>();
+		File file = new File("icone");
+		
+		File[] lista = file.listFiles();
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i].isDirectory()) {
+				listaIcone.add(lista[i].getName());
+			}
+		}
+		return listaIcone.toArray(new String[listaIcone.size()]);
 	}
 }

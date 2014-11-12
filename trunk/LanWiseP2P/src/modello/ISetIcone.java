@@ -11,6 +11,7 @@ import java.util.List;
  *
  */
 public interface ISetIcone {
+	
 
 	/**
 	 * Effettua la lettura del file che contiene le icone presenti per un dato set.
@@ -21,4 +22,16 @@ public interface ISetIcone {
 	 * @return la lista di tutte le icone per il set di icone scelto
 	 */
 	public abstract List<Icona> leggiFile();
+	
+	
+	/**
+	 * Legge dentro la directory 'icone' tutti i set di icone disponibili
+	 * 
+	 * Tutti i set di icone,quindi, verranno aggiunte automaticamente alla lista dei set disponibili
+	 * 
+	 * @return i nomi delle directory che contengono tutti i set di icone disponibili.
+	 */
+	public String[] readDirectoryIcone();
 }
+
+
