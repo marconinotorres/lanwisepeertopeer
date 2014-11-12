@@ -12,6 +12,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import modello.LetturaIcone;
 import modello.LetturaListaUtenti;
 import modello.UtenteSelected;
+import modello.dataio.StringLinesReader;
 import modello.letturaListaUtenti.TestReadUtenti;
 import modello.readIcone.TestLetturaIcone;
 import modello.writeUtenteSelezionato.TestWriteConnessione;
@@ -43,11 +44,11 @@ public class Main {
 			e1.printStackTrace();
 		}
 
-		LetturaListaUtenti.setUtente(new TestReadUtenti());
+		(new StringLinesReader(new TestReadUtenti())).readFile("data/listaUtenti.txt");
 		UtenteSelected.setUtente(new TestWriteConnessione());
 		
-		LetturaIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone("icone/iconspurple"));
-		LetturaIcone.getLetturaIcone().setPath("icone/iconspurple/");
+		LetturaIcone.getLetturaIcone().setNomeDirectory("icone/iconspurple/");
+		(new StringLinesReader(new TestLetturaIcone())).readFile("icone/iconspurple/fslook.txt");
 		
 		PannelloAccesso p = new PannelloAccesso();
 

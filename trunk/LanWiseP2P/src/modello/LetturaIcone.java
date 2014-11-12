@@ -1,5 +1,9 @@
 package modello;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class LetturaIcone {
 
@@ -14,31 +18,60 @@ public class LetturaIcone {
 	}
 	
 	//as Class
-	private ISetIcone setIcone;
-	private String path;
+	private List<Icona> listaIcone = new ArrayList<Icona>();
+	private String pathDirectory;
 	
-	public void setSetIcone(ISetIcone setIcone) {
-		this.setIcone = setIcone;
+	public void addIcona(Icona icona){
+		listaIcone.add(icona);
 	}
 	
-	public ISetIcone getSetIcone() {
-		return setIcone;
-	}
-	
-	/**
-	 * @return la directory che contiene il set di Icone da visualizzare
-	 */
-	public String getPath(){
-		return path;
+	public List<Icona> getListaIcone() {
+		return listaIcone;
 	}
 	
 	/**
-	 * Imposta la directory contenente il set di Icone che si vuole impostare
-	 * @param path
+	 * Imposta il nome della directory contenente le icone da visualizzare
+	 * @param nome directory
 	 */
-	public void setPath(String path){
-		this.path = path;
+	public void setNomeDirectory(String nomeDirectory) {
+		this.pathDirectory = nomeDirectory;
 	}
+	
+	public String getNomeDirectory() {
+		return pathDirectory;
+	}
+	
+	/**
+	 * Legge dentro la directory 'icone' tutti i set di icone disponibili
+	 * 
+	 * Tutti i set di icone,quindi, verranno aggiunte automaticamente alla lista dei set disponibili
+	 * 
+	 * @return i nomi delle directory che contengono tutti i set di icone disponibili.
+	 */
+	public String[] readDirectoryIcone(){
+		List<String> listaDirectoryIcone = new ArrayList<String>();
+		File file = new File("icone");
 		
+		File[] lista = file.listFiles();
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i].isDirectory()) {
+				listaDirectoryIcone.add(lista[i].getName());
+			}
+		}
+		return listaDirectoryIcone.toArray(new String[listaDirectoryIcone.size()]);
+	}
 	
+	public String impostaIcona(String estensione) {
+		String nomeIcona = null;
+		for (int i = 0; i < listaIcone.size(); i++) {
+			if (listaIcone.get(i).isContains(estensione)) {
+				nomeIcona = getNomeDirectory()+
+						listaIcone.get(i).getNomeIcona(estensione);
+			}
+		}
+		if (nomeIcona == null) {
+			nomeIcona = getNomeDirectory()+"sconosciuto.png";
+		}
+		return nomeIcona;
+	}
 }
