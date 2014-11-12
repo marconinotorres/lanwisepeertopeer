@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import modello.LetturaIcone;
 import modello.LetturaListaUtenti;
 import modello.UtenteSelected;
 import modello.letturaListaUtenti.TestReadUtenti;
-import modello.readIcone.LetturaFileIcone;
 import modello.readIcone.TestLetturaIcone;
 import modello.writeUtenteSelezionato.TestWriteConnessione;
 
@@ -45,8 +45,9 @@ public class Main {
 
 		LetturaListaUtenti.setUtente(new TestReadUtenti());
 		UtenteSelected.setUtente(new TestWriteConnessione());
-		LetturaFileIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone("icone/iconspurple/fslook.txt"));
-		LetturaFileIcone.getLetturaIcone().setPath("icone/iconspurple/");
+		
+		LetturaIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone("icone/iconspurple"));
+		LetturaIcone.getLetturaIcone().setPath("icone/iconspurple/");
 		
 		PannelloAccesso p = new PannelloAccesso();
 

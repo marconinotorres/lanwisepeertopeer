@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import modello.readIcone.LetturaFileIcone;
+import modello.LetturaIcone;
 import modello.readIcone.TestLetturaIcone;
 
 /**
@@ -24,20 +24,24 @@ public class MenuSetIcone extends JMenu {
 	public MenuSetIcone() {
 		super("setIcone");
 		
-		String[] setIcone = LetturaFileIcone.getLetturaIcone().setIcone();
+		String[] nameDirectoryIcone = LetturaIcone.getLetturaIcone().getSetIcone().readDirectoryIcone();
 		
-		item = new JMenuItem[setIcone.length];
-		for (int i = 0; i < setIcone.length; i++) {
-			item[i] = new JMenuItem(setIcone[i]);
+		item = new JMenuItem[nameDirectoryIcone.length];
+		
+		for (int i = 0; i < nameDirectoryIcone.length; i++) {
+			
+			item[i] = new JMenuItem(nameDirectoryIcone[i]);
 			add(item[i]);
 			
-			final String name = setIcone[i];
+			final String name = nameDirectoryIcone[i];
 			item[i].addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					LetturaFileIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone("icone/"+name+"/fslook.txt"));
-					LetturaFileIcone.getLetturaIcone().setPath("icone/"+name+"/");
+					String path = "icone/"+name+"/";
+					
+					LetturaIcone.getLetturaIcone().setPath(path);
+					LetturaIcone.getLetturaIcone().setSetIcone(new TestLetturaIcone(path));
 				}
 			});
 		}

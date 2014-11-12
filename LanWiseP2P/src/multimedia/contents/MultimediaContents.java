@@ -10,8 +10,8 @@ import java.util.StringTokenizer;
 import modello.CartelleUtente;
 import modello.FileHandler;
 import modello.Icona;
+import modello.LetturaIcone;
 import modello.Utente;
-import modello.readIcone.LetturaFileIcone;
 import multimedia.IMultimediaContents;
 import rete.PeerAsClient;
 
@@ -37,7 +37,7 @@ public class MultimediaContents implements IMultimediaContents {
 			BufferedReader in = new BufferedReader(new FileReader(nomeFile));
 			String line = in.readLine();
 			List<Icona> listaIcona = new ArrayList<Icona>();
-			listaIcona = LetturaFileIcone.getLetturaIcone().getSetIcone().leggiFile();
+			listaIcona = LetturaIcone.getLetturaIcone().getSetIcone().leggiFile();
 			
 			while (line!= null) {
 				
@@ -57,11 +57,11 @@ public class MultimediaContents implements IMultimediaContents {
 				
 				for (int i = 0; i < listaIcona.size(); i++) {
 					if (listaIcona.get(i).isContains(estensione)) {
-						nomeIcona = LetturaFileIcone.getLetturaIcone().getPath()+listaIcona.get(i).getNomeIcona(estensione);
+						nomeIcona = LetturaIcone.getLetturaIcone().getPath()+listaIcona.get(i).getNomeIcona(estensione);
 					}
 				}
 				if (nomeIcona == null) {
-					nomeIcona = LetturaFileIcone.getLetturaIcone().getPath()+"sconosciuto.png";
+					nomeIcona = LetturaIcone.getLetturaIcone().getPath()+"sconosciuto.png";
 				}
 				
 				contents.add(new FileHandler(file, dim, utente,path,nomeIcona));
