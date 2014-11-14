@@ -20,7 +20,7 @@ public class StringLinesWriter {
 	 */
 	public void write(String filename){
 		try {
-			FileWriter writer=new FileWriter(filename);
+			FileWriter writer=new FileWriter(filename,false);
 			while(lines.hasNext()){
 				writer.write(lines.next()+"\n");
 			}

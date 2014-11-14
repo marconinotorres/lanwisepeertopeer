@@ -1,15 +1,7 @@
 package modello.letturaListaUtenti;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
 
-import modello.LetturaListaUtenti;
+import modello.ListaUtenti;
 import modello.Utente;
 import modello.dataio.IFileLineReader;
 
@@ -32,10 +24,12 @@ public class TestReadUtenti implements IFileLineReader {
 	public void readLine(String line) {
 		
 		String[] parts = line.split(" ");
-		
-		if (parts[2].equals("N")) {
-			LetturaListaUtenti.getUtente().addUtente(new Utente(parts[0], parts[1]));
-		}	
-		
+		boolean conn = false;
+		if (parts[2].equals("false")) {
+			conn = false;
+		}else{
+			conn = true;
+		}
+		ListaUtenti.getUtenti().addUtente(new Utente(parts[0], parts[1], conn));		
 	}
 }
