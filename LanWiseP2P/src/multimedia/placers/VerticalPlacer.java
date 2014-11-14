@@ -37,10 +37,10 @@ public class VerticalPlacer implements IPlacer{
 		String path = contents.getContentsList().get(index).getPath();
 		String icona = contents.getContentsList().get(index).getIcona();
 		
-		FormattazioneFileHandler formato = new FormattazioneFileHandler(nomeFile, dimension, utente, path, icona);
+		FormattazioneFileHandler formato = new FormattazioneFileHandler(new FileHandler(nomeFile, dimension, utente, path,icona));
 		
 		try {
-			BufferedImage image = ImageIO.read(new File(formato.getIcona()));
+			BufferedImage image = ImageIO.read(new File(formato.getFileHandler().getIcona()));
 			
 			int halfWidth= (image.getWidth())>>1;
 			int halfHeight=image.getHeight()>>1;
@@ -48,11 +48,11 @@ public class VerticalPlacer implements IPlacer{
 			graphics2d.drawImage(image,iconCenterX-halfWidth,(iconCenterY-halfHeight)+slot*DISTANZA_CONTENUTI, null,null);
 			
 			String name = formato.setNCaratteri(nomeFile);
-			String dim = formato.numeroDecimali(formato.getDimension());
+			String dim = formato.numeroDecimali(formato.getFileHandler().getDimension());
 			
 			graphics2d.drawString(name,iconCenterX+100,iconCenterY+slot*DISTANZA_CONTENUTI);
 			graphics2d.drawString(dim,iconCenterX+500,iconCenterY+slot*DISTANZA_CONTENUTI);
-			graphics2d.drawString(formato.getUtente().getCognome(),iconCenterX+650,iconCenterY+slot*DISTANZA_CONTENUTI);
+			graphics2d.drawString(formato.getFileHandler().getUtente().getCognome(),iconCenterX+650,iconCenterY+slot*DISTANZA_CONTENUTI);
 			
 			
 		} catch (IOException e) {

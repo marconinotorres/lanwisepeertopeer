@@ -6,16 +6,26 @@ package modello;
  * @author Giuseppe Restivo
  *
  */
-public class FormattazioneFileHandler extends FileHandler {
+public class FormattazioneFileHandler {
 
 	private static final int numeroMAXCARATTERI = 50;
-	
 
-	public FormattazioneFileHandler(String nomeFile, int dimension,
-			Utente utente, String path, String icona) {
-		super(nomeFile, dimension, utente, path, icona);
-		// TODO Auto-generated constructor stub
+	private FileHandler fileHandler;
+	
+	public FileHandler getFileHandler() {
+		return fileHandler;
 	}
+
+	public FormattazioneFileHandler(FileHandler fileHandler) {
+		super();
+		this.fileHandler = fileHandler;
+	}
+
+//	public FormattazioneFileHandler(String nomeFile, int dimension,
+//			Utente utente, String path, String icona) {
+//		super(nomeFile, dimension, utente, path, icona);
+//		// TODO Auto-generated constructor stub
+//	}
 
 	/**
 	 * Imposta in numero massimo di caratteri da visualizzare

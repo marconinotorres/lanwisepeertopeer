@@ -5,18 +5,17 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
-import rete.PeerAsServer;
+import modello.ListaUtenti;
+import modello.dataio.StringLinesReader;
+import modello.dataio.StringLinesWriter;
+import modello.letturaListaUtenti.TestWriteChangeConnessione;
 import application.Main;
-import modello.LetturaListaUtenti;
-import modello.Utente;
-import modello.UtenteSelected;
 
 /**
  * Pannello che permette di identificare l'utente che si vuole connettere
@@ -38,11 +37,11 @@ public class PannelloAccesso extends JPanel {
 		setBorder(border);
 		ButtonGroup gruppo = new ButtonGroup();
 
-		for (int i = 0; i < LetturaListaUtenti.getUtente().getUtenti()
+		for (int i = 0; i < ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
 				.size(); i++) {
-			String nome = LetturaListaUtenti.getUtente().getUtenti()
+			String nome = ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
 					.get(i).getNome();
-			String cognome = LetturaListaUtenti.getUtente().getUtenti()
+			String cognome = ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
 					.get(i).getCognome();
 			buttonUtenti.add(new JRadioButton(nome + "  " + cognome));
 			gruppo.add(buttonUtenti.get(i));
@@ -50,19 +49,20 @@ public class PannelloAccesso extends JPanel {
 
 		}
 
-		List<Utente> lista = LetturaListaUtenti.getUtente().getUtenti();
 
 		for (int i = 0; i < buttonUtenti.size(); i++) {
-			final String cognomeUtente = lista.get(i).getCognome();
-			final String nomeUtente = lista.get(i).getNome();
+			
+			final int index = i;
 			buttonUtenti.get(i).addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-
-					UtenteSelected.getUtente().setUtenteCollegato(
-							new Utente(nomeUtente, cognomeUtente));
-
+					
+					ListaUtenti.getUtenti().setUtenteSelected(index);
+					ListaUtenti.getUtenti().getUtenteSelected().setConnesso(true);
+				
+					(new StringLinesWriter(new TestWriteChangeConnessione())).write("data/listaUtenti.txt");
+					
 					new FrameCartellaCondivisione();
 					Main.getFrame().dispose();
 

@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import modello.UtenteSelected;
 import multimedia.IMultimediaContents;
 import multimedia.IMultimediaSettings;
 import multimedia.MultimediaList;
@@ -79,7 +78,6 @@ public class FrameCondivisione extends JFrame {
 				ListSignal signal = ListSignal.getInstance();
 				while (signal.hasDataToProcess()) {
 				}
-				contents.getContentsList().clear();
 				contents.readContentsFile();
 				panel2.repaint();
 			}

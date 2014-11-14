@@ -15,7 +15,7 @@ import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import modello.UtenteSelected;
+import modello.ListaUtenti;
 
 /**
  * Invia in broadcast la lista dei propri file, ovvero il file 'MyListFile.txt',
@@ -125,10 +125,10 @@ public class BroadcastServer extends Thread {
 							+ ","
 							+ (int) fileEntry.length()
 							+ ","
-							+ UtenteSelected.getUtente().getUtenteCollegato()
+							+ ListaUtenti.getUtenti().getUtenteSelected()
 									.getCognome()
 							+ ","
-							+ UtenteSelected.getUtente().getUtenteCollegato()
+							+ ListaUtenti.getUtenti().getUtenteSelected()
 									.getNome() + "," + fileEntry.getName();
 
 					out.println(file);
