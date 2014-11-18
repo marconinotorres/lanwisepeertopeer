@@ -50,7 +50,6 @@ public class Main {
 		PannelloAccesso p = new PannelloAccesso();
 
 		frame.getContentPane().add(p);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setBounds((int) screenSize.getWidth() >> 3,

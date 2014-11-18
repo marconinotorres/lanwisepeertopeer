@@ -11,6 +11,7 @@ import modello.MessaggioEccezione;
 
 /**
  * Viene attivato quando si vuole in download un certo file e
+ * 
  * avvia il Client effettivo che riceve i byte e li salva.
  * 
  * @author Giuseppe Restivo

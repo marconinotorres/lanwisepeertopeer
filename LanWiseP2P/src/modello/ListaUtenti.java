@@ -3,6 +3,12 @@ package modello;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Unica istanza di tutti gli utenti che possono collegarsi al programma
+ * 
+ * @author Giuseppe Restivo
+ *
+ */
 public class ListaUtenti {
 
 	//Singleton
@@ -28,7 +34,7 @@ public class ListaUtenti {
 	}
 	
 	/**
-	 * Imposta un utente che si è connesso
+	 * Imposta l'utente che si è connesso
 	 * @param l'indice di riferimento all'interno della lista
 	 */
 	public void setUtenteSelected(int index) {
@@ -44,13 +50,12 @@ public class ListaUtenti {
 	 * @param utente
 	 * @return true se l'utente è connesso, false altrimenti
 	 */
-	public boolean getConnessione(Utente utente){
+	public boolean isConnected(Utente utente){
 		
 		boolean connessione = false;
 		for (int i = 0; i < ListaUtenti.getUtenti().getListaUtenti().size(); i++) {
 			if (listaUtenti.get(i).getCognome().equals(utente.getCognome()) &&
 					listaUtenti.get(i).getNome().equals(utente.getNome())) {
-				
 				connessione = listaUtenti.get(i).isConnesso();
 			}
 		}
@@ -71,4 +76,16 @@ public class ListaUtenti {
 		}
 		return lista;
 	} 
+	
+	/**
+	 * Imposta true agli utenti che sono già collegati
+	 * @param indirizzo ip dell'utente connesso
+	 */
+	public void impostaConnessioni(String ip){
+		for (int i = 0; i < ListaUtenti.getUtenti().getListaUtenti().size(); i++) {
+			if (ListaUtenti.getUtenti().getListaUtenti().get(i).getIp().equals(ip)) {
+				ListaUtenti.getUtenti().getListaUtenti().get(i).setConnesso(true);
+			}
+		}
+	}
 }

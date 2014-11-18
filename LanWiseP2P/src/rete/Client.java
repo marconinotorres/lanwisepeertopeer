@@ -9,7 +9,7 @@ import java.net.Socket;
 /**
  * Riceve i byte del file che si vuole scaricare
  * 
- * @author giusepperestivo
+ * @author Giuseppe Restivo
  * 
  */
 public class Client extends Thread {

@@ -3,10 +3,15 @@ package grafica;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import application.Main;
+import modello.ListaUtenti;
 import modello.Servizio;
+import modello.dataio.StringLinesWriter;
+import modello.letturaListaUtenti.TestWriteChangeConnessione;
 import modello.service.AggiungiFileDaCondividere;
 import modello.service.ProxyServizio;
 import modello.service.RimuoviFileCondiviso;
@@ -34,7 +39,7 @@ public class MenuServizi extends JMenu {
 
 		add(addFile);
 		add(removeFile);
-
+		
 		addFile.addActionListener(new ActionListener() {
 
 			@Override
@@ -54,6 +59,7 @@ public class MenuServizi extends JMenu {
 
 			}
 		});
+		
 	}
 
 }
