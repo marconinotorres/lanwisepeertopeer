@@ -21,12 +21,6 @@ public class FormattazioneFileHandler {
 		this.fileHandler = fileHandler;
 	}
 
-//	public FormattazioneFileHandler(String nomeFile, int dimension,
-//			Utente utente, String path, String icona) {
-//		super(nomeFile, dimension, utente, path, icona);
-//		// TODO Auto-generated constructor stub
-//	}
-
 	/**
 	 * Imposta in numero massimo di caratteri da visualizzare
 	 * @param word da modificare
@@ -49,7 +43,7 @@ public class FormattazioneFileHandler {
 		
 		String dim = String.valueOf(dimensione);
 		String dim2 = String.valueOf(dimensione);
-		System.err.println(dimensione+"   "+dim.length());
+		
 		if (dim.length()<=3) {
 			return dim+"byte";
 		}

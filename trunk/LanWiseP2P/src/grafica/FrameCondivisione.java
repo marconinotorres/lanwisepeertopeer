@@ -9,11 +9,17 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import application.Main;
+import modello.ListaUtenti;
+import modello.dataio.StringLinesWriter;
+import modello.letturaListaUtenti.TestWriteChangeConnessione;
 import multimedia.IMultimediaContents;
 import multimedia.IMultimediaSettings;
 import multimedia.MultimediaList;
@@ -51,6 +57,10 @@ public class FrameCondivisione extends JFrame {
 	private MenuServizi serviziMenu = new MenuServizi();
 	private MenuSetIcone setIcone = new MenuSetIcone();
 
+	private JMenu menuExit = new JMenu("Esci");
+	private JMenuItem exit = new JMenuItem("Esci");
+	
+	
 	public FrameCondivisione() {
 
 		parteGrafica();
@@ -96,6 +106,19 @@ public class FrameCondivisione extends JFrame {
 		menubar.add(serviziMenu);
 		menubar.add(ordinamentoMenu);
 		menubar.add(setIcone);
+		menubar.add(menuExit);
+		menuExit.add(exit);
+		
+		exit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				ListaUtenti.getUtenti().getUtenteSelected().setConnesso(false);
+				(new StringLinesWriter(new TestWriteChangeConnessione())).write("data/listaUtenti.txt");
+				System.exit(0);
+			}
+		});
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -108,7 +131,6 @@ public class FrameCondivisione extends JFrame {
 		setJMenuBar(menubar);
 		setBackground(Color.gray);
 		setTitle("LWP2P");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		add(panel2);
 
 	}

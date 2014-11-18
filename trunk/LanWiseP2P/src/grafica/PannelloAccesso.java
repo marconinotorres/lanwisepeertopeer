@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 
+import rete.ListaUtentiRete;
 import modello.ListaUtenti;
 import modello.dataio.StringLinesReader;
 import modello.dataio.StringLinesWriter;
@@ -28,9 +29,10 @@ public class PannelloAccesso extends JPanel {
 	private static final long serialVersionUID = 0;
 
 	private final ArrayList<JRadioButton> buttonUtenti = new ArrayList<JRadioButton>();
-
+	private ListaUtentiRete rete = new ListaUtentiRete();
+	
 	public PannelloAccesso() {
-
+		rete.start();
 		setLayout(new GridLayout(5, 1));
 		TitledBorder border = new TitledBorder("Lista_Utenti");
 		border.setTitleColor(Color.blue);

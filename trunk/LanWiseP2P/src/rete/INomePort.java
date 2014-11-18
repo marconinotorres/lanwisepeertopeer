@@ -23,5 +23,5 @@ public class INomePort {
 	 */
 	public static final String NOMEPORTABROADCAST = "230.0.0.1";
 	
-
+	public static final String NOMEPORTABROADCAST2 = "230.0.0.2";
 }

@@ -16,5 +16,7 @@ public class INomiFile {
 	 * Nome del file che contiene tutti i file di un singolo utente e che verrˆ condiviso con gli altri
 	 */
 	public static final String FILEUTENTE = "data/MyFilesList.txt";
+	
+	public static final String LISTAUTENTI = "data/listaUtenti.txt";
 
 }
