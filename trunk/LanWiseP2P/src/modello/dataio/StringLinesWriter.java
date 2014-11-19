@@ -12,17 +12,17 @@ public class StringLinesWriter {
 		super();
 		this.lines = lines;
 	}
-	
+
 	/**
 	 * Scrive Le linee di un file
 	 * 
 	 * @param filename
 	 */
-	public void write(String filename){
+	public void write(String filename) {
 		try {
-			FileWriter writer=new FileWriter(filename,false);
-			while(lines.hasNext()){
-				writer.write(lines.next()+"\n");
+			FileWriter writer = new FileWriter(filename, false);
+			while (lines.hasNext()) {
+				writer.write(lines.next() + "\n");
 			}
 			writer.close();
 		} catch (IOException e) {

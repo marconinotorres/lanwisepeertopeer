@@ -2,7 +2,7 @@ package rete;
 
 /**
  * Specifica il numero e nome delle porte usate dai socket.
- *  
+ * 
  * @author Giuseppe Restivo
  * 
  */
@@ -22,6 +22,6 @@ public class INomePort {
 	 * Nome host usato in BroadcastServer e BroadcastClient
 	 */
 	public static final String NOMEPORTABROADCAST = "230.0.0.1";
-	
+
 	public static final String NOMEPORTABROADCAST2 = "230.0.0.2";
 }

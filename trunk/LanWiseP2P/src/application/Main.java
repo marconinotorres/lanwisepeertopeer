@@ -42,11 +42,13 @@ public class Main {
 			e1.printStackTrace();
 		}
 
-		(new StringLinesReader(new TestReadUtenti())).readFile("data/listaUtenti.txt");
-		
+		(new StringLinesReader(new TestReadUtenti()))
+				.readFile("data/listaUtenti.txt");
+
 		LetturaIcone.getLetturaIcone().setNomeDirectory("icone/iconspurple/");
-		(new StringLinesReader(new TestLetturaIcone())).readFile("icone/iconspurple/fslook.txt");
-		
+		(new StringLinesReader(new TestLetturaIcone()))
+				.readFile("icone/iconspurple/fslook.txt");
+
 		PannelloAccesso p = new PannelloAccesso();
 
 		frame.getContentPane().add(p);

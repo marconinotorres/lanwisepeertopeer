@@ -1,12 +1,13 @@
 package rete;
 
 /**
- * E' un semaforo per la lettura del file 'OtherFileLists.txt'.
- * Quando questo file viene scritto da un utente, un altro non può nè accedervi in lettura nè modificarlo.
- * Risolve il problema del "lampeggiamento" nella visualizzazione grafica delle liste. 
+ * E' un semaforo per la lettura del file 'OtherFileLists.txt'. Quando questo
+ * file viene scritto da un utente, un altro non può nè accedervi in lettura nè
+ * modificarlo. Risolve il problema del "lampeggiamento" nella visualizzazione
+ * grafica delle liste.
  * 
  * @author Giuseppe Restivo
- *
+ * 
  */
 public class ListSignal {
 
@@ -24,7 +25,8 @@ public class ListSignal {
 	}
 
 	/**
-	 * @return true se un processo sta elaborando il file; in caso di false il processo può elaborare il file
+	 * @return true se un processo sta elaborando il file; in caso di false il
+	 *         processo può elaborare il file
 	 */
 	public synchronized boolean hasDataToProcess() {
 		return this.hasDataToProcess;

@@ -11,7 +11,6 @@ import modello.FileHandler;
  */
 public interface IMultimediaContents {
 
-	
 	public void readContentsFile();
 
 	/**

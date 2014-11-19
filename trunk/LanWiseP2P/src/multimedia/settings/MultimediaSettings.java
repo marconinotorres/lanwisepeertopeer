@@ -5,16 +5,15 @@ import java.awt.Graphics;
 
 import multimedia.IMultimediaSettings;
 
+public class MultimediaSettings implements IMultimediaSettings {
 
-public class MultimediaSettings implements IMultimediaSettings{
+	private Color focusColor = Color.RED;
+	private Color nonFocusColor = Color.BLACK;
 
-	private Color focusColor=Color.RED;
-	private Color nonFocusColor=Color.BLACK;
-	
 	public MultimediaSettings() {
 		super();
 	}
-	
+
 	public MultimediaSettings(Color focusColor, Color nonFocusColor) {
 		super();
 		this.focusColor = focusColor;
@@ -23,9 +22,9 @@ public class MultimediaSettings implements IMultimediaSettings{
 
 	@Override
 	public void applySlotSettings(Graphics graphics, int slot) {
-		if(slot==0){
+		if (slot == 0) {
 			graphics.setColor(focusColor);
-		}else{
+		} else {
 			graphics.setColor(nonFocusColor);
 		}
 	}
@@ -45,5 +44,5 @@ public class MultimediaSettings implements IMultimediaSettings{
 	public void setNonFocusColor(Color nonFocusColor) {
 		this.nonFocusColor = nonFocusColor;
 	}
-	
+
 }
