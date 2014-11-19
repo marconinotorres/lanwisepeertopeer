@@ -17,8 +17,8 @@ import modello.service.ProxyServizio;
 import modello.service.RimuoviFileCondiviso;
 
 /**
- * Menu grafico dove � possibile scegliere un servizio, ad esempio
- * aggiungere un nuovo file alla cartella condivisa o rimuoverla
+ * Menu grafico dove � possibile scegliere un servizio, ad esempio aggiungere
+ * un nuovo file alla cartella condivisa o rimuoverla
  * 
  * @author giusepperestivo
  * 
@@ -39,7 +39,7 @@ public class MenuServizi extends JMenu {
 
 		add(addFile);
 		add(removeFile);
-		
+
 		addFile.addActionListener(new ActionListener() {
 
 			@Override
@@ -59,7 +59,7 @@ public class MenuServizi extends JMenu {
 
 			}
 		});
-		
+
 	}
 
 }

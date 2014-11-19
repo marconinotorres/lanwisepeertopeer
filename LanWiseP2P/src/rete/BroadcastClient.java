@@ -31,7 +31,6 @@ import java.util.Scanner;
  */
 public class BroadcastClient extends Thread {
 
-	
 	public void run() {
 
 		ListSignal signal = ListSignal.getInstance();
@@ -41,7 +40,7 @@ public class BroadcastClient extends Thread {
 			signal.setHasDataToProcess(true);
 			try {
 				Files.deleteIfExists(Paths.get(INomiFile.FILECONDIVISO));
-				
+
 				MulticastSocket socket = new MulticastSocket(4446);
 				InetAddress address = InetAddress
 						.getByName(INomePort.NOMEPORTABROADCAST);

@@ -12,8 +12,9 @@ import modello.readIcone.TestLetturaIcone;
 
 /**
  * Il menu per cambiare a run-time il set di icone
+ * 
  * @author Giuseppe Restivo
- *
+ * 
  */
 public class MenuSetIcone extends JMenu {
 
@@ -21,34 +22,34 @@ public class MenuSetIcone extends JMenu {
 
 	private JMenuItem[] item;
 
-	
 	public MenuSetIcone() {
 		super("setIcone");
-		
-		String[] nameDirectoryIcone = LetturaIcone.getLetturaIcone().readDirectoryIcone();
-		
+
+		String[] nameDirectoryIcone = LetturaIcone.getLetturaIcone()
+				.readDirectoryIcone();
+
 		item = new JMenuItem[nameDirectoryIcone.length];
-		
+
 		for (int i = 0; i < nameDirectoryIcone.length; i++) {
-			
+
 			item[i] = new JMenuItem(nameDirectoryIcone[i]);
 			add(item[i]);
-			
+
 			final String name = nameDirectoryIcone[i];
-			
+
 			item[i].addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					String path = "icone/"+name+"/";
-					
+					String path = "icone/" + name + "/";
+
 					LetturaIcone.getLetturaIcone().setNomeDirectory(path);
-					(new StringLinesReader(new TestLetturaIcone())).readFile(path+"fslook.txt");
-					
+					(new StringLinesReader(new TestLetturaIcone()))
+							.readFile(path + "fslook.txt");
+
 				}
 			});
 		}
 	}
-	
-	
+
 }

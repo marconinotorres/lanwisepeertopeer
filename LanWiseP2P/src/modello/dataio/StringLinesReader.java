@@ -13,19 +13,20 @@ public class StringLinesReader {
 		super();
 		this.fileReader = fileReader;
 	}
-	
+
 	/**
 	 * Legge le linee di un file
+	 * 
 	 * @param filename
 	 */
-	public void readFile(String filename){
-		
+	public void readFile(String filename) {
+
 		try {
-			BufferedReader reader=new BufferedReader(new FileReader(filename));
-			String line=reader.readLine();
-			while(line!=null){
+			BufferedReader reader = new BufferedReader(new FileReader(filename));
+			String line = reader.readLine();
+			while (line != null) {
 				fileReader.readLine(line);
-				line=reader.readLine();
+				line = reader.readLine();
 			}
 			reader.close();
 		} catch (FileNotFoundException e) {

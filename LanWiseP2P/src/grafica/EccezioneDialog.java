@@ -8,10 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
-
 /**
- * Classe che estende un JDialog dove verrà stampato il tipo di eccezione generato
- * nel caso in cui venga generata un'eccezione
+ * Classe che estende un JDialog dove verrà stampato il tipo di eccezione
+ * generato nel caso in cui venga generata un'eccezione
  * 
  * @author giusepperestivo
  * 

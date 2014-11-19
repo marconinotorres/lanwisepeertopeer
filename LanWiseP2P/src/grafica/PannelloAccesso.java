@@ -30,7 +30,7 @@ public class PannelloAccesso extends JPanel {
 
 	private final ArrayList<JRadioButton> buttonUtenti = new ArrayList<JRadioButton>();
 	private ListaUtentiRete rete = new ListaUtentiRete();
-	
+
 	public PannelloAccesso() {
 		rete.start();
 		setLayout(new GridLayout(5, 1));
@@ -39,32 +39,33 @@ public class PannelloAccesso extends JPanel {
 		setBorder(border);
 		ButtonGroup gruppo = new ButtonGroup();
 
-		for (int i = 0; i < ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
-				.size(); i++) {
-			String nome = ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
-					.get(i).getNome();
-			String cognome = ListaUtenti.getUtenti().getListaUtentiDaVisualizzare()
-					.get(i).getCognome();
+		for (int i = 0; i < ListaUtenti.getUtenti()
+				.getListaUtentiDaVisualizzare().size(); i++) {
+			String nome = ListaUtenti.getUtenti()
+					.getListaUtentiDaVisualizzare().get(i).getNome();
+			String cognome = ListaUtenti.getUtenti()
+					.getListaUtentiDaVisualizzare().get(i).getCognome();
 			buttonUtenti.add(new JRadioButton(nome + "  " + cognome));
 			gruppo.add(buttonUtenti.get(i));
 			add(buttonUtenti.get(i));
 
 		}
 
-
 		for (int i = 0; i < buttonUtenti.size(); i++) {
-			
+
 			final int index = i;
 			buttonUtenti.get(i).addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					
+
 					ListaUtenti.getUtenti().setUtenteSelected(index);
-					ListaUtenti.getUtenti().getUtenteSelected().setConnesso(true);
-				
-					(new StringLinesWriter(new TestWriteChangeConnessione())).write("data/listaUtenti.txt");
-					
+					ListaUtenti.getUtenti().getUtenteSelected()
+							.setConnesso(true);
+
+					(new StringLinesWriter(new TestWriteChangeConnessione()))
+							.write("data/listaUtenti.txt");
+
 					new FrameCartellaCondivisione();
 					Main.getFrame().dispose();
 

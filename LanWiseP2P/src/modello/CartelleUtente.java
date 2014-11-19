@@ -4,7 +4,8 @@ package modello;
  * Imposta la cartella da Condividere e la cartella dove si andranno a salvare i
  * file scaricati
  * 
- * E' un singleton perchè le queste cartelle non si cambieranno più una volta scelte
+ * E' un singleton perchè le queste cartelle non si cambieranno più una volta
+ * scelte
  * 
  * @author Giuseppe Restivo
  * 

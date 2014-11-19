@@ -17,7 +17,8 @@ import grafica.FrameCondivisione;
 import rete.BroadcastClient;
 
 /**
- * Permette di selezionare all'avvio del programma la cartella dove si salvano i file scaricati
+ * Permette di selezionare all'avvio del programma la cartella dove si salvano i
+ * file scaricati
  * 
  * @author Giuseppe Restivo
  * 

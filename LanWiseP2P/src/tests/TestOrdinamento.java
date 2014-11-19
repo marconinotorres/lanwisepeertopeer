@@ -23,11 +23,11 @@ public class TestOrdinamento {
 		lista.clear();
 
 		lista.add(new FileHandler("prova1", 10, new Utente("Giuseppe",
-				"Restivo"), null,null));
+				"Restivo"), null, null));
 		lista.add(new FileHandler("prova5", 50, new Utente("Marco", "Cortesi"),
-				null,null));
+				null, null));
 		lista.add(new FileHandler("prova4", 30, new Utente("Nicola", "Blago"),
-				null,null));
+				null, null));
 		lista.add(new FileHandler("prova7", 15,
 				new Utente("Federico", "Bacci"), null, null));
 		lista.add(new FileHandler("prova6", 20, new Utente("Stefano",

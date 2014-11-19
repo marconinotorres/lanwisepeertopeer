@@ -13,13 +13,16 @@ public class ProxyPlacer implements IPlacer {
 		super();
 		this.placer = placer;
 	}
+
 	public void setPlacer(IPlacer placer) {
 		this.placer = placer;
 	}
-	
+
 	/*
 	 * (non-Javadoc)
-	 * @see multimedia.IPlacer#place(java.awt.Graphics, int, int, multimedia.IMultimediaContents)
+	 * 
+	 * @see multimedia.IPlacer#place(java.awt.Graphics, int, int,
+	 * multimedia.IMultimediaContents)
 	 */
 	@Override
 	public void place(Graphics graphics, int slot, int index,

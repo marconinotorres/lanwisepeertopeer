@@ -12,7 +12,6 @@ public class Utente {
 	private String ip;
 	private boolean connesso;
 
-	
 	public Utente(String nome, String cognome, boolean connesso) {
 		super();
 		this.nome = nome;
@@ -53,10 +52,11 @@ public class Utente {
 	public boolean isConnesso() {
 		return connesso;
 	}
+
 	public void setConnesso(boolean connesso) {
 		this.connesso = connesso;
 	}
-	
+
 	@Override
 	public String toString() {
 		return nome + " " + cognome + " " + connesso;

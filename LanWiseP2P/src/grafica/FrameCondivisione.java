@@ -59,8 +59,7 @@ public class FrameCondivisione extends JFrame {
 
 	private JMenu menuExit = new JMenu("Esci");
 	private JMenuItem exit = new JMenuItem("Esci");
-	
-	
+
 	public FrameCondivisione() {
 
 		parteGrafica();
@@ -108,25 +107,25 @@ public class FrameCondivisione extends JFrame {
 		menubar.add(setIcone);
 		menubar.add(menuExit);
 		menuExit.add(exit);
-		
+
 		exit.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				ListaUtenti.getUtenti().getUtenteSelected().setConnesso(false);
-				(new StringLinesWriter(new TestWriteChangeConnessione())).write("data/listaUtenti.txt");
+				(new StringLinesWriter(new TestWriteChangeConnessione()))
+						.write("data/listaUtenti.txt");
 				System.exit(0);
 			}
 		});
-		
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 		setBounds((int) screenSize.getWidth() >> 2,
 				(int) screenSize.getHeight() >> 3,
 				(int) screenSize.getWidth() << 2,
 				(int) screenSize.getHeight() << 1);
-
 
 		setJMenuBar(menubar);
 		setBackground(Color.gray);
